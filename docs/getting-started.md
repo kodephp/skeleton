@@ -205,7 +205,7 @@ HTTP 状态 **422**。规则用字符串管道写法：`required`、`email`、`m
 
 ## 9. 健康检查 & 探针
 
-- `GET /health` → `{"status":"ok","service":"kode-app","version":"0.8.53","php":"8.3.x","env":"local","time":"..."}`（K8s / 负载均衡探针用）
+- `GET /health` → `{"status":"ok","service":"kode-app","version":"0.9.0","php":"8.3.x","env":"local","time":"..."}`（K8s / 负载均衡探针用）
 - `GET /` → 框架元信息
 
 ---

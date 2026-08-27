@@ -2,7 +2,7 @@
 
 欢迎使用 **Kode Framework** —— 一个以 [kode](https://github.com/kodephp) 生态为基座、组合 Monolog / Symfony Validator 等成熟包的现代化 PHP API 框架。最低 PHP 8.3+，开箱即多进程常驻服务，错误默认返回可追踪的结构化 JSON。
 
-> 当前版本：**v0.8.53** · 包名：`kode/framework` · 仓库：<https://github.com/kodephp/framework>
+> 当前版本：**v0.9.0** · 包名：`kode/framework` · 仓库：<https://github.com/kodephp/framework>
 
 ## 学习路径
 

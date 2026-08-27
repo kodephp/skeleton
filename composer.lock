@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c9a8b11fa935541ca058fbde667c29cc",
+    "content-hash": "d2dde5965fdadd286e2cbf64f76a551d",
     "packages": [
         {
             "name": "guzzlehttp/psr7",
@@ -533,11 +533,11 @@
         },
         {
             "name": "kode/database",
-            "version": "1.15.8",
+            "version": "1.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/database.git",
-                "reference": "f54d66e0ce40317fc2e2b51ee2f2ae1700e80870"
+                "reference": "5c32fde3aa7178f28939533c94a847a30e9515df"
             },
             "require": {
                 "ext-pdo": "*",
@@ -597,7 +597,7 @@
                 "thinkphp",
                 "webman"
             ],
-            "time": "2026-08-25T02:26:41+00:00"
+            "time": "2026-08-27T07:40:16+00:00"
         },
         {
             "name": "kode/di",
@@ -1012,16 +1012,16 @@
         },
         {
             "name": "kode/http-client",
-            "version": "2.5.0",
+            "version": "2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/http-client.git",
-                "reference": "a87923213a3fe2a02e79a3951cdb0a9e6516f015"
+                "reference": "5d245575e9c480fe6649ad86784f8957a7be6bd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/http-client/zipball/a87923213a3fe2a02e79a3951cdb0a9e6516f015",
-                "reference": "a87923213a3fe2a02e79a3951cdb0a9e6516f015",
+                "url": "https://api.github.com/repos/kodephp/http-client/zipball/5d245575e9c480fe6649ad86784f8957a7be6bd1",
+                "reference": "5d245575e9c480fe6649ad86784f8957a7be6bd1",
                 "shasum": ""
             },
             "require": {
@@ -1091,7 +1091,7 @@
                 "issues": "https://github.com/kodephp/http-client/issues",
                 "source": "https://github.com/kodephp/http-client"
             },
-            "time": "2026-08-11T05:17:39+00:00"
+            "time": "2026-08-27T07:21:42+00:00"
         },
         {
             "name": "kode/jwt",
@@ -1513,16 +1513,16 @@
         },
         {
             "name": "kode/process",
-            "version": "5.2.38",
+            "version": "5.2.39",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/process.git",
-                "reference": "1e9d0c2b642e2ded19e708af1d9cfaef1d34910c"
+                "reference": "ee15252ca1b31f2431c8c185619be75883e900e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/process/zipball/1e9d0c2b642e2ded19e708af1d9cfaef1d34910c",
-                "reference": "1e9d0c2b642e2ded19e708af1d9cfaef1d34910c",
+                "url": "https://api.github.com/repos/kodephp/process/zipball/ee15252ca1b31f2431c8c185619be75883e900e8",
+                "reference": "ee15252ca1b31f2431c8c185619be75883e900e8",
                 "shasum": ""
             },
             "require": {
@@ -1599,9 +1599,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kodephp/process/issues",
-                "source": "https://github.com/kodephp/process/tree/v5.2.38"
+                "source": "https://github.com/kodephp/process/tree/v5.2.39"
             },
-            "time": "2026-08-27T02:43:05+00:00"
+            "time": "2026-08-27T07:14:56+00:00"
         },
         {
             "name": "kode/queue",
