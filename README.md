@@ -10,7 +10,7 @@
 
 ```bash
 # 1. 一句话安装：下载框架 + composer install + 初始化（项目名 myapp 写在包名后）
-composer create-project kode/framework myapp
+composer create-project kode/skeleton myapp
 cd myapp
 
 # 2. 启动多进程 HTTP 服务（默认 http://127.0.0.1:9527）
@@ -102,8 +102,8 @@ curl "http://127.0.0.1:9527/hello?name=Kode"   # {"hello":"Kode"}
 
 | 文档 | 看什么 |
 | --- | --- |
-| [入门指南](docs/getting-started.md) | 环境、安装、第一个接口、请求/响应、校验、错误、运行与排错 |
-| [开发文档总览](docs/README.md) | 路由全解、中间件编写、鉴权、限流、熔断、定时任务、多进程、缓存/队列/数据库/事件/HTTP、配置、日志、门面与助手、控制台、DI 与服务提供者、AOP、插件、部署、测试（docs/ 文档地图） |
+| [入门指南](../kode框架文档/docs/getting-started.md) | 环境、安装、第一个接口、请求/响应、校验、错误、运行与排错 |
+| [开发文档总览](../kode框架文档/docs/README.md) | 路由全解、中间件编写、鉴权、限流、熔断、定时任务、多进程、缓存/队列/数据库/事件/HTTP、配置、日志、门面与助手、控制台、DI 与服务提供者、AOP、插件、部署、测试（docs/ 文档地图） |
 
 > 建议顺序：先照「入门指南」把第一个接口跑通，再按需查阅「进阶用法」。
 

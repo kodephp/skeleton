@@ -1,76 +1,21 @@
 {
-    "name": "kode/framework",
-    "description": "Kode Framework —— 以 kode/core 为启动器、kode/runtime 为统一运行时（Swoole/Swow/Fiber/多进程/多线程）的现代 PHP 全栈框架，组合 kode 生态（di/router/http/console/aop/cache/event/jwt/facade...）与 Monolog、Symfony Validator 等成熟包。",
-    "type": "library",
-    "keywords": [
-        "framework",
-        "kode",
-        "core",
-        "runtime",
-        "di",
-        "router",
-        "http",
-        "console",
-        "aop",
-        "process",
-        "fibers",
-        "parallel",
-        "coroutine",
-        "psr"
-    ],
+    "name": "kode/skeleton",
+    "description": "Kode Framework Skeleton —— composer create-project 后自动生成 app/config 等骨架",
+    "type": "project",
+    "keywords": ["kode", "skeleton", "hyperf", "webman"],
     "license": "MIT",
     "repositories": [
         {
-            "type": "git",
-            "url": "https://github.com/kodephp/database.git"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/kodephp/http.git"
-        }
-    ],
-    "authors": [
-        {
-            "name": "kode"
+            "type": "path",
+            "url": "../framework",
+            "options": {"symlink": true}
         }
     ],
     "require": {
         "php": ">=8.3",
-        "ext-pcntl": "*",
-        "ext-posix": "*",
-        "ext-sockets": "*",
-        "kode/aop": "^3.3",
-        "kode/attributes": "^2.1",
-        "kode/cache": "^1.0",
-        "kode/console": "^4.0",
-        "kode/context": "^3.1",
-        "kode/core": "^1.4",
-        "kode/database": "^1.15.5",
-        "kode/di": "^2.3",
-        "kode/event": "^1.23",
-        "kode/exception": "^3.0",
-        "kode/facade": "^3.2",
-        "kode/fibers": "^4.10",
-        "kode/http": "^3.4",
-        "kode/http-client": "^2.5",
-        "kode/jwt": "^1.12",
-        "kode/limiting": "^2.0",
-        "kode/messaging": "^3.3",
-        "kode/middleware": "^1.2",
-        "kode/parallel": "^1.18",
-        "kode/process": "~5.2.36",
-        "kode/queue": "^2.2",
-        "kode/router": "^2.1",
-        "kode/runtime": "^3.4",
-        "kode/scheduling": "^1.3",
-        "kode/session": "^3.2",
+        "kode/framework": "*",
         "monolog/monolog": "^3.0",
         "nyholm/psr7": "^1.8",
-        "psr/container": "^2.0",
-        "psr/http-factory": "^1.0",
-        "psr/http-message": "^2.0",
-        "psr/http-server-middleware": "^1.0",
-        "psr/log": "^3.0",
         "symfony/translation": "^7.0",
         "symfony/validator": "^7.0"
     },
@@ -79,36 +24,25 @@
     },
     "autoload": {
         "psr-4": {
-            "Kode\\Framework\\": "src/",
             "app\\": "app/"
-        },
-        "files": [
-            "src/Support/helpers.php"
-        ]
+        }
     },
     "autoload-dev": {
         "psr-4": {
-            "Kode\\Framework\\Tests\\": "tests/"
+            "app\\tests\\": "tests/"
         }
     },
-    "bin": [
-        "bin/kode"
-    ],
+    "bin": ["bin/kode"],
     "config": {
         "sort-packages": true,
         "optimize-autoloader": true,
-        "minimum-stability": "dev",
-        "prefer-stable": true,
-        "allow-plugins": {
-            "*": true
-        }
+        "allow-plugins": {"*": true}
     },
     "scripts": {
-        "serve": "php bin/kode serve",
-        "console": "php bin/console",
-        "new": "php bin/kode new",
-        "init": "php bin/kode init",
         "post-create-project-cmd": "php bin/kode init",
+        "serve": "php bin/kode serve",
         "test": "php vendor/bin/phpunit"
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

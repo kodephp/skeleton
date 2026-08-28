@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d2dde5965fdadd286e2cbf64f76a551d",
+    "content-hash": "31704ccd9aa45ef2888a1ec4d221b364",
     "packages": [
         {
             "name": "guzzlehttp/psr7",
@@ -539,6 +539,12 @@
                 "url": "https://github.com/kodephp/database.git",
                 "reference": "5c32fde3aa7178f28939533c94a847a30e9515df"
             },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kodephp/database/zipball/5c32fde3aa7178f28939533c94a847a30e9515df",
+                "reference": "5c32fde3aa7178f28939533c94a847a30e9515df",
+                "shasum": ""
+            },
             "require": {
                 "ext-pdo": "*",
                 "php": ">=8.3"
@@ -568,11 +574,7 @@
                     "Kode\\Database\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Kode\\Database\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "Apache-2.0"
             ],
@@ -597,6 +599,10 @@
                 "thinkphp",
                 "webman"
             ],
+            "support": {
+                "issues": "https://github.com/kodephp/database/issues",
+                "source": "https://github.com/kodephp/database/tree/v1.17.0"
+            },
             "time": "2026-08-27T07:40:16+00:00"
         },
         {
@@ -890,12 +896,133 @@
             "time": "2026-08-10T10:20:29+00:00"
         },
         {
+            "name": "kode/framework",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../framework",
+                "reference": "f3aefb1322338bc152fb9a9bac82210f52eb3f00"
+            },
+            "require": {
+                "ext-pcntl": "*",
+                "ext-posix": "*",
+                "ext-sockets": "*",
+                "kode/aop": "*",
+                "kode/attributes": "*",
+                "kode/cache": "*",
+                "kode/console": "*",
+                "kode/context": "*",
+                "kode/core": "*",
+                "kode/database": "^1.15.5",
+                "kode/di": "*",
+                "kode/event": "*",
+                "kode/exception": "*",
+                "kode/facade": "*",
+                "kode/fibers": "*",
+                "kode/http": "*",
+                "kode/http-client": "^2.5",
+                "kode/jwt": "*",
+                "kode/limiting": "^2.0",
+                "kode/messaging": "^3.3",
+                "kode/middleware": "*",
+                "kode/parallel": "*",
+                "kode/process": "~5.2.36",
+                "kode/queue": "^2.2",
+                "kode/router": "*",
+                "kode/runtime": "*",
+                "kode/scheduling": "^1.3",
+                "kode/session": "*",
+                "monolog/monolog": "^3.0",
+                "nyholm/psr7": "^1.8",
+                "php": ">=8.3",
+                "psr/container": "^2.0",
+                "psr/http-factory": "^1.0",
+                "psr/http-message": "^2.0",
+                "psr/http-server-middleware": "^1.0",
+                "psr/log": "^3.0",
+                "symfony/translation": "^7.0",
+                "symfony/validator": "^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^11.0"
+            },
+            "bin": [
+                "bin/kode"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Kode\\Framework\\": "src/"
+                },
+                "files": [
+                    "src/Support/helpers.php"
+                ]
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Kode\\Framework\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "serve": [
+                    "php bin/kode serve"
+                ],
+                "console": [
+                    "php bin/console"
+                ],
+                "new": [
+                    "php bin/kode new"
+                ],
+                "init": [
+                    "php bin/kode init"
+                ],
+                "test": [
+                    "php vendor/bin/phpunit"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "kode"
+                }
+            ],
+            "description": "Kode Framework —— 以 kode/core 为启动器、kode/runtime 为统一运行时（Swoole/Swow/Fiber/多进程/多线程）的现代 PHP 全栈框架，组合 kode 生态与 Monolog、Symfony Validator 等成熟包。",
+            "keywords": [
+                "aop",
+                "console",
+                "core",
+                "coroutine",
+                "di",
+                "fibers",
+                "framework",
+                "http",
+                "kode",
+                "parallel",
+                "process",
+                "psr",
+                "router",
+                "runtime"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
             "name": "kode/http",
-            "version": "3.4.16",
+            "version": "3.4.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/http.git",
-                "reference": "f204b77da79cbb544b1bb8e197677cf2dd31c5f4"
+                "reference": "b639af2a4b139d18a8a7912e1a8454a3f704b05b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kodephp/http/zipball/b639af2a4b139d18a8a7912e1a8454a3f704b05b",
+                "reference": "b639af2a4b139d18a8a7912e1a8454a3f704b05b",
+                "shasum": ""
             },
             "require": {
                 "kode/context": "^3.1",
@@ -930,45 +1057,24 @@
             },
             "type": "library",
             "extra": {
-                "branch-alias": {
-                    "dev-main": "3.4.x-dev"
-                },
                 "kode": {
                     "name": "Kode\\Http",
-                    "description": "高性能 HTTP 服务端库，支持 PSR-7/PSR-15/PSR-17 和协程",
-                    "category": "kode"
+                    "category": "kode",
+                    "description": "高性能 HTTP 服务端库，支持 PSR-7/PSR-15/PSR-17 和协程"
+                },
+                "branch-alias": {
+                    "dev-main": "3.4.x-dev"
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Kode\\Http\\": "src/"
-                },
                 "files": [
                     "src/functions.php"
-                ]
-            },
-            "autoload-dev": {
+                ],
                 "psr-4": {
-                    "Kode\\Http\\Tests\\": "tests/"
+                    "Kode\\Http\\": "src/"
                 }
             },
-            "scripts": {
-                "test": [
-                    "phpunit"
-                ],
-                "test-coverage": [
-                    "phpunit --coverage-html coverage"
-                ],
-                "test-unit": [
-                    "phpunit --testsuite Unit"
-                ],
-                "lint": [
-                    "php-cs-fixer fix --dry-run --diff"
-                ],
-                "lint-fix": [
-                    "php-cs-fixer fix"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "Apache-2.0"
             ],
@@ -1004,11 +1110,11 @@
                 "workerman"
             ],
             "support": {
+                "docs": "https://github.com/kodephp/http/blob/main/README.md",
                 "issues": "https://github.com/kodephp/http/issues",
-                "source": "https://github.com/kodephp/http",
-                "docs": "https://github.com/kodephp/http/blob/main/README.md"
+                "source": "https://github.com/kodephp/http"
             },
-            "time": "2026-08-27T02:38:28+00:00"
+            "time": "2026-08-26T05:46:43+00:00"
         },
         {
             "name": "kode/http-client",
@@ -5292,15 +5398,12 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {},
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=8.3",
-        "ext-pcntl": "*",
-        "ext-posix": "*",
-        "ext-sockets": "*"
+        "php": ">=8.3"
     },
     "platform-dev": {},
     "plugin-api-version": "2.9.0"
