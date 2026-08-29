@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "31704ccd9aa45ef2888a1ec4d221b364",
+    "content-hash": "30f2cb5494c7d5f8113142bf9035ddef",
     "packages": [
         {
             "name": "guzzlehttp/psr7",
@@ -897,11 +897,17 @@
         },
         {
             "name": "kode/framework",
-            "version": "dev-master",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kodephp/framework.git",
+                "reference": "96b6fe2f209a7dba733416cd41b0525f46095a10"
+            },
             "dist": {
-                "type": "path",
-                "url": "../framework",
-                "reference": "f3aefb1322338bc152fb9a9bac82210f52eb3f00"
+                "type": "zip",
+                "url": "https://api.github.com/repos/kodephp/framework/zipball/96b6fe2f209a7dba733416cd41b0525f46095a10",
+                "reference": "96b6fe2f209a7dba733416cd41b0525f46095a10",
+                "shasum": ""
             },
             "require": {
                 "ext-pcntl": "*",
@@ -1005,10 +1011,11 @@
                 "router",
                 "runtime"
             ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/kodephp/framework/tree/v1.0.0",
+                "issues": "https://github.com/kodephp/framework/issues"
+            },
+            "time": "2026-08-29T03:01:28+00:00"
         },
         {
             "name": "kode/http",

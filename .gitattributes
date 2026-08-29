@@ -1,9 +1,12 @@
-# Composer 分发归档（create-project / require 下载的 zip）导出规则。
-# 仅影响分发包，不改 git 仓库内容；框架自身的 src/ 必须保留（消费者依赖它）。
+# Composer 分发归档导出规则。
+# 仅影响 create-project / require 下载的归档，不改 git 仓库内容。
+#
+# 与「库」的惯例相反：本仓库是 **项目模板**（type: project），create-project 拿到的就是用户
+# 自己的项目，因此 tests/ 等开发产物必须随包分发——否则生成的项目没有测试目录，
+# 而 composer.json 又声明了 `composer test`，命令必然失败。
+# （框架仓库 kode/framework 是 type: library，消费者安装到 vendor/，那边排除 tests/ 才是对的。）
 
-# 开发/文档产物不进入分发包
-/tests/                export-ignore
-/docs/                 export-ignore
+# 仅排除本机/仓库元数据，不排除开发产物
 /.workbuddy/           export-ignore
 /.github/              export-ignore
 

@@ -6,6 +6,18 @@
 
 return [
     'name' => env('APP_NAME', 'kode-app'),
+
+    /*
+     * 骨架版本。
+     *
+     * 与 composer.json 的 "version" 字段、git tag 三者同步（统一发版流程）。
+     * 注意与「框架内核版本」区分：框架内置 /health 返回的 version 是
+     * Kode\Framework\Application::VERSION（kode/framework 的版本），这里是本骨架
+     * （项目模板）的版本，两者独立演进。业务若要在 /health 之外暴露骨架版本，读本键即可：
+     *   config('app.version') 或 config()->get('app.version')
+     */
+    'version' => env('APP_VERSION', '1.0.0'),
+
     'debug' => (bool) env('APP_DEBUG', false),
     'timezone' => env('APP_TIMEZONE', 'Asia/Shanghai'),
     'env' => env('APP_ENV', 'local'),

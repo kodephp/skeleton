@@ -4,16 +4,16 @@
     "type": "project",
     "keywords": ["kode", "skeleton", "hyperf", "webman"],
     "license": "MIT",
+    "version": "1.0.0",
     "repositories": [
         {
-            "type": "path",
-            "url": "../framework",
-            "options": {"symlink": true}
+            "type": "vcs",
+            "url": "https://github.com/kodephp/framework.git"
         }
     ],
     "require": {
         "php": ">=8.3",
-        "kode/framework": "*",
+        "kode/framework": "^1.0",
         "monolog/monolog": "^3.0",
         "nyholm/psr7": "^1.8",
         "symfony/translation": "^7.0",

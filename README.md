@@ -9,8 +9,10 @@
 ## 5 分钟跑起来
 
 ```bash
-# 1. 一句话安装：下载框架 + composer install + 初始化（项目名 myapp 写在包名后）
-composer create-project kode/skeleton myapp
+# 1. 安装：下载骨架 + composer install + 初始化（项目名 myapp 写在包名后）
+composer create-project kode/skeleton myapp \
+  --repository='{"type":"vcs","url":"https://github.com/kodephp/skeleton.git"}' \
+  --stability=dev
 cd myapp
 
 # 2. 启动多进程 HTTP 服务（默认 http://127.0.0.1:9527）
@@ -18,10 +20,14 @@ php bin/kode serve
 
 # 3. 验证
 curl http://127.0.0.1:9527/health
-# {"status":"ok","service":"kode-app","version":"0.9.0","php":"8.3.x","env":"local","time":"..."}
+# {"status":"ok","service":"kode-app","version":"1.0.0","php":"8.3.33","env":"local","time":"..."}
 ```
 
-> 安装时 `composer create-project` 会自动生成 `.env` 与 `storage/` 目录。
+> **为什么多了 `--repository`**：`kode/skeleton` 与 `kode/framework` 目前都**未提交到 Packagist**，
+> 直接 `composer create-project kode/skeleton myapp` 会报 `Could not find package ... with stability stable`。
+> 显式指定 VCS 仓库即可安装。待两个包上架 Packagist 后，可省去该参数回到一行命令。
+
+> 安装时 `composer create-project` 会自动执行 `php bin/kode init`，生成 `.env`（含强随机 `JWT_SECRET`，权限 0600）与 `storage/` 目录。
 > 若把框架作为依赖引入已有项目：`composer require kode/framework`，再把仓库里的 `app/`、`config/`、`bin/`、`lang/`、`database/` 复制进项目根，然后 `php vendor/bin/kode init`。
 
 第一个接口：
@@ -111,9 +117,19 @@ curl "http://127.0.0.1:9527/hello?name=Kode"   # {"hello":"Kode"}
 
 ## 版本
 
-- 当前版本：**[v0.9.0](https://github.com/kodephp/framework/releases)**
-- 包名：`kode/framework`（Composer）
-- 仓库：<https://github.com/kodephp/framework>
+| 项目 | 值 |
+| --- | --- |
+| 骨架版本 | **v1.0.0**（`composer.json` 的 `version`、`config/app.php` 的 `app.version`、git tag 三者同步） |
+| 包名 | `kode/skeleton`（`type: project`，用于 `composer create-project`） |
+| 仓库 | <https://github.com/kodephp/skeleton> |
+| 依赖内核 | `kode/framework` `^1.0`（当前 v1.0.0） |
+
+两个版本号是**独立演进**的：
+
+- `kode/framework` —— 框架内核，版本常量 `Kode\Framework\Application::VERSION`，也是内置 `/health` 端点返回的 `version`。
+- `kode/skeleton` —— 本骨架（项目模板），版本见 `config('app.version')`。骨架升级（改默认配置、加示例控制器）不要求内核发版，反之亦然。
+
+发行记录：<https://github.com/kodephp/skeleton/releases>
 
 ## 许可证
 

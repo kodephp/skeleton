@@ -54,7 +54,7 @@ return [
     'cross_origin_embedder_policy' => env('SECURITY_COEP', false),
 
     /*
-     * 受信反向代理列表（v0.8.42 新增，H4 修复的配置锚点）。
+     * 受信反向代理列表（v1.0.0 新增，H4 修复的配置锚点）。
      *
      * 仅当直连对端（REMOTE_ADDR）命中此列表时，框架才采信 X-Forwarded-For / X-Real-IP
      * 等转发头，用于限流真实 IP、审计溯源、灰度分桶。默认 [] = 不信任任何代理，

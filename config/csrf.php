@@ -26,7 +26,7 @@ return [
     // Angular 等框架的 XSRF 双提交 cookie 头（亦被接受为提交令牌来源）。
     'xsrf_header' => env('CSRF_XSRF_HEADER', 'X-XSRF-Token'),
 
-    // 表单 / JSON 体中提交令牌的字段名（v0.8.52 起不再接受查询参数载体，防令牌入 URL/日志/Referer）。
+    // 表单 / JSON 体中提交令牌的字段名（v1.0.0 起不再接受查询参数载体，防令牌入 URL/日志/Referer）。
     'token_param' => env('CSRF_TOKEN_PARAM', '_token'),
 
     // 校验失败响应（419 为 Laravel 惯例，贴合前端拦截器预期）。
