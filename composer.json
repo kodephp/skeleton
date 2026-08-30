@@ -4,7 +4,7 @@
     "type": "project",
     "keywords": ["kode", "skeleton", "hyperf", "webman"],
     "license": "MIT",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "repositories": [
         {
             "type": "vcs",
@@ -13,7 +13,7 @@
     ],
     "require": {
         "php": ">=8.3",
-        "kode/framework": "^1.0",
+        "kode/framework": "^1.1",
         "monolog/monolog": "^3.0",
         "nyholm/psr7": "^1.8",
         "symfony/translation": "^7.0",

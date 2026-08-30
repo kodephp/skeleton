@@ -20,7 +20,7 @@ php bin/kode serve
 
 # 3. 验证
 curl http://127.0.0.1:9527/health
-# {"status":"ok","service":"kode-app","version":"1.0.0","php":"8.3.33","env":"local","time":"..."}
+# {"status":"ok","service":"kode-app","version":"1.1.0","php":"8.3.33","env":"local","time":"..."}
 ```
 
 > **为什么多了 `--repository`**：`kode/skeleton` 与 `kode/framework` 目前都**未提交到 Packagist**，
@@ -61,6 +61,57 @@ return function (App $app): void {
 ```bash
 curl "http://127.0.0.1:9527/hello?name=Kode"   # {"hello":"Kode"}
 ```
+
+---
+
+## 服务运维命令（对标 workerman）
+
+> `bin/kode` 在本骨架里是**薄壳转发**：唯一实现在 `vendor/kode/framework/bin/kode`。
+> 这样 CLI 能力随 `composer update` 一起升级，不会出现「骨架一份、框架一份」的命令漂移。
+
+启动时打印进程表横幅，**协议 / 用户 / worker 名 / 监听地址与端口 / 进程数 / 状态**一目了然：
+
+```text
+Kode[bin/kode] start in PRODUCTION mode
+--- KODE ---------------------------------------------------------------------
+Kode Framework version:1.1.0          PHP version:8.3.33
+Runtime:native                   Event-Loop:event
+--- WORKERS ------------------------------------------------------------------
+proto    user       worker           listen                       processes  status
+http     Zhuanz     kode-http        http://127.0.0.1:9527        8          [OK]
+------------------------------------------------------------------------------
+项目根目录：/srv/myapp
+Press Ctrl+C to stop. Start success.
+```
+
+| 命令 | 作用 |
+| --- | --- |
+| `php bin/kode serve` | 前台启动（`--host` `--port` `--workers` `--watch` `--graceful`） |
+| `php bin/kode serve -d` | **守护进程模式**（脱离终端，写 PID 文件，用 `stop` 停止） |
+| `php bin/kode status` | workerman 风格状态表：GLOBAL STATUS + 逐进程 PROCESS STATUS |
+| `php bin/kode status --pid=N` | 只看某一个进程（master 或 worker）的详情 |
+| `php bin/kode stop [-g]` | 停止服务（默认 SIGTERM 优雅停机，`-g` 强制 SIGKILL） |
+| `php bin/kode reload` | 平滑重启 worker（master 不动，不中断在途请求） |
+| `php bin/kode restart` | 停止并以守护模式重新拉起 |
+
+```text
+----------------------------------------------GLOBAL STATUS----------------------------------------------
+Kode Framework version:1.1.0        PHP version:8.3.33
+start time:2026-08-30 12:36:36    run 0 days 0 hours 1 minutes
+master pid:81664      runtime:native     event-loop:event    load average:0.35, 0.31, 0.28
+1 workers       3 processes
+worker_name      processes  status
+kode-http        3          [OK]
+----------------------------------------------PROCESS STATUS---------------------------------------------
+pid      memory    listening                      worker_name    connections  total_request  qps    status
+81667    12.00M    http://127.0.0.1:9527          kode-http#0    0            128            3      [idle]
+```
+
+进程表数据来自各 worker 的 1Hz 心跳，写在 `storage/runtime/`（该目录是运行时产物，已加入 `.gitignore`，
+随时可删、会自动重建）。
+
+与 workerman 的差异如实标注：不输出 `exit_status` / `exit_count` 两列——master 循环位于
+`kode/process` 内部，业务层拿不到子进程退出码，与其填 0 假装「零退出」误导排障，不如不列。
 
 ---
 
@@ -119,10 +170,10 @@ curl "http://127.0.0.1:9527/hello?name=Kode"   # {"hello":"Kode"}
 
 | 项目 | 值 |
 | --- | --- |
-| 骨架版本 | **v1.0.0**（`composer.json` 的 `version`、`config/app.php` 的 `app.version`、git tag 三者同步） |
+| 骨架版本 | **v1.1.0**（`composer.json` 的 `version`、`config/app.php` 的 `app.version`、git tag 三者同步） |
 | 包名 | `kode/skeleton`（`type: project`，用于 `composer create-project`） |
 | 仓库 | <https://github.com/kodephp/skeleton> |
-| 依赖内核 | `kode/framework` `^1.0`（当前 v1.0.0） |
+| 依赖内核 | `kode/framework` `^1.1`（当前 v1.1.0） |
 
 两个版本号是**独立演进**的：
 
