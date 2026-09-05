@@ -20,7 +20,7 @@ php kode start
 
 # 3. 验证
 curl http://127.0.0.1:9527/health
-# {"status":"ok","service":"kode-app","version":"1.3.1","php":"8.3.33","env":"local","time":"..."}
+# {"status":"ok","service":"kode-app","version":"1.3.2","php":"8.3.33","env":"local","time":"..."}
 ```
 
 > **为什么多了 `--repository`**：`kode/skeleton` 与 `kode/framework` 目前都**未提交到 Packagist**，
@@ -177,10 +177,10 @@ pid      memory    listening                      worker_name    connections  to
 
 | 项目 | 值 |
 | --- | --- |
-| 骨架版本 | **v1.3.1**（`composer.json` 的 `version`、`config/app.php` 的 `app.version`、git tag 三者同步） |
+| 骨架版本 | **v1.3.2**（`composer.json` 的 `version`、`config/app.php` 的 `app.version`、git tag 三者同步） |
 | 包名 | `kode/skeleton`（`type: project`，用于 `composer create-project`） |
 | 仓库 | <https://github.com/kodephp/skeleton> |
-| 依赖内核 | `kode/framework` `^1.1`（当前 v1.3.1） |
+| 依赖内核 | `kode/framework` `^1.1`（当前 v1.3.3） |
 
 两个版本号是**独立演进**的：
 
