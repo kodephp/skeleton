@@ -20,7 +20,7 @@ php kode start
 
 # 3. 验证
 curl http://127.0.0.1:9527/health
-# {"status":"ok","service":"kode-app","version":"1.2.5","php":"8.3.33","env":"local","time":"..."}
+# {"status":"ok","service":"kode-app","version":"1.2.6","php":"8.3.33","env":"local","time":"..."}
 ```
 
 > **为什么多了 `--repository`**：`kode/skeleton` 与 `kode/framework` 目前都**未提交到 Packagist**，
@@ -95,9 +95,9 @@ Press Ctrl+C to stop. Start success.
 | `php kode status --pid=N` | 只看某一个进程（master 或 worker）的详情 |
 | `php kode stop [-g]` | 停止服务（默认 SIGTERM 优雅停机，`-g` 强制 SIGKILL） |
 | `php kode reload [-d]` | 全量重载（等价 stop 后 start；默认前台，`-d` 进守护） |
-| `php kode restart` | 平滑滚动重启 worker（不动 master；未运行则报错） |
+| `php kode restart` | 运行中平滑滚动 worker；未运行按 `start` 拉起 |
 
-> 命令约定（v1.2.5 起）：`reload`＝重载所有（stop＋start），`restart`＝只平滑滚动
+> 命令约定（v1.2.6 起）：`reload`＝重载所有（stop＋start），`restart`＝只平滑滚动
 > worker。注意这与 workerman 的命名相反（那边 restart 是全量、reload 是平滑），
 > 为统一记忆：**带 e 的 reload 做“全套”（rEload＝Everything），短小的 restart 做“滚动”（rolling）**。
 
@@ -177,7 +177,7 @@ pid      memory    listening                      worker_name    connections  to
 
 | 项目 | 值 |
 | --- | --- |
-| 骨架版本 | **v1.2.5**（`composer.json` 的 `version`、`config/app.php` 的 `app.version`、git tag 三者同步） |
+| 骨架版本 | **v1.2.6**（`composer.json` 的 `version`、`config/app.php` 的 `app.version`、git tag 三者同步） |
 | 包名 | `kode/skeleton`（`type: project`，用于 `composer create-project`） |
 | 仓库 | <https://github.com/kodephp/skeleton> |
 | 依赖内核 | `kode/framework` `^1.1`（当前 v1.2.0） |
