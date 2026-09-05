@@ -1,100 +1,194 @@
-# Kode Framework 开发文档
+# Kode Framework
 
-欢迎使用 **Kode Framework** —— 一个以 [kode](https://github.com/kodephp) 生态为基座、组合 Monolog / Symfony Validator 等成熟包的现代化 PHP API 框架。最低 PHP 8.3+，开箱即多进程常驻服务，错误默认返回可追踪的结构化 JSON。
+一个以 [kode](https://github.com/kodephp) 生态组件为基座、组合 Monolog / Symfony Validator 等成熟包的**现代化 PHP API 框架**。最低 PHP 8.3+，开箱即多进程常驻服务，错误默认返回可追踪的结构化 JSON。
 
-> 当前版本：**v1.3.0** · 包名：`kode/framework` · 仓库：<https://github.com/kodephp/framework>
+> 设计立场和 webman / Hyperf 一致：**薄内核 + 复用 Composer 生态**。框架只做「启动、容器、路由、统一响应、异常、中间件、韧性层」等地基，其余能力（JWT、限流、缓存、队列、数据库、事件、HTTP 客户端、消息、国际化、Snowflake、定时任务、多进程……）全部来自 kode 生态包，业务代码不变即可切换运行时（Fiber 协程 / 多进程 / 多线程 / Swoole / 分布式）。
 
-## 学习路径
+---
 
-| 阶段 | 目标 | 必读 |
+## 5 分钟跑起来
+
+```bash
+# 1. 安装：下载骨架 + composer install + 初始化（项目名 myapp 写在包名后）
+composer create-project kode/skeleton myapp \
+  --repository='{"type":"vcs","url":"https://github.com/kodephp/skeleton.git"}' \
+  --stability=dev
+cd myapp
+
+# 2. 启动多进程 HTTP 服务（默认 http://127.0.0.1:9527）
+php kode start
+
+# 3. 验证
+curl http://127.0.0.1:9527/health
+# {"status":"ok","service":"kode-app","version":"1.3.0","php":"8.3.33","env":"local","time":"..."}
+```
+
+> **为什么多了 `--repository`**：`kode/skeleton` 与 `kode/framework` 目前都**未提交到 Packagist**，
+> 直接 `composer create-project kode/skeleton myapp` 会报 `Could not find package ... with stability stable`。
+> 显式指定 VCS 仓库即可安装。待两个包上架 Packagist 后，可省去该参数回到一行命令。
+
+> 安装时 `composer create-project` 会自动执行 `php kode init`，生成 `.env`（含强随机 `JWT_SECRET`，权限 0600）与 `storage/` 目录。
+> 若把框架作为依赖引入已有项目：`composer require kode/framework`，再把仓库里的 `app/`、`config/`、`lang/`、`database/`、`kode` 复制进项目根，然后 `php kode init`（控制台命令走 `php kode console ...`，无需 `bin/console`）。
+
+第一个接口：
+
+```php
+// app/http/controllers/HelloController.php
+namespace app\http\controllers;
+
+use Kode\Framework\Http\Controller;
+
+final class HelloController extends Controller
+{
+    public function say(): array
+    {
+        $name = $this->input('name', '世界');
+        return ['hello' => $name];          // 直接返回数组 → 自动 JSON 化
+    }
+}
+```
+
+```php
+// app/routes.php
+use Kode\Http\App;
+use app\http\controllers\HelloController;
+
+return function (App $app): void {
+    $app->get('/hello', fn() => resolve(HelloController::class)->say());
+};
+```
+
+```bash
+curl "http://127.0.0.1:9527/hello?name=Kode"   # {"hello":"Kode"}
+```
+
+---
+
+## 服务运维命令（对标 workerman）
+
+> 项目根 `kode` 在本骨架里是**薄壳转发**：唯一实现在 `vendor/kode/framework/kode`。
+> 入口同时声明 `KODE_PROJECT_ROOT`，使转发的框架 CLI 能定位项目根（否则 `init` 会把
+> `.env` 误写进 vendor 目录）。`bin/` 目录已在 v1.2.0 移除（`bin/kode` 曾是兼容垫片，
+> `bin/console` 已并入 `kode console` 子命令）。
+> 这样 CLI 能力随 `composer update` 一起升级，不会出现「骨架一份、框架一份」的命令漂移。
+
+启动时打印进程表横幅，**协议 / 用户 / worker 名 / 监听地址与端口 / 进程数 / 状态**一目了然：
+
+```text
+Kode[bin/kode] start in PRODUCTION mode
+--- KODE ---------------------------------------------------------------------
+Kode Framework version:1.2.0          PHP version:8.3.33
+Runtime:native                   Event-Loop:event
+--- WORKERS ------------------------------------------------------------------
+proto    user       worker           listen                       processes  status
+http     Zhuanz     kode-http        http://127.0.0.1:9527        8          [OK]
+------------------------------------------------------------------------------
+项目根目录：/srv/myapp
+Press Ctrl+C to stop. Start success.
+```
+
+| 命令 | 作用 |
+| --- | --- |
+| `php kode start` | 前台启动（非 production 默认热重载，`--no-watch` 关闭；`serve` 为别名） |
+| `php kode start -d` | **守护进程模式**（脱离终端，写 PID 文件，用 `stop` 停止） |
+| `php kode status` | workerman 风格状态表：GLOBAL STATUS + 逐进程 PROCESS STATUS |
+| `php kode status --pid=N` | 只看某一个进程（master 或 worker）的详情 |
+| `php kode stop [-g]` | 停止服务（默认 SIGTERM 优雅停机，`-g` 强制 SIGKILL） |
+| `php kode reload [-d]` | 全量重载（等价 stop 后 start；默认前台，`-d` 进守护） |
+| `php kode restart` | 运行中平滑滚动 worker；未运行按 `start` 拉起 |
+
+> 命令约定（v1.2.4 起）：`reload`＝重载所有（stop＋start），`restart`＝只平滑滚动
+> worker。注意这与 workerman 的命名相反（那边 restart 是全量、reload 是平滑），
+> 为统一记忆：**带 e 的 reload 做“全套”（rEload＝Everything），短小的 restart 做“滚动”（rolling）**。
+
+```text
+----------------------------------------------GLOBAL STATUS----------------------------------------------
+Kode Framework version:1.2.0        PHP version:8.3.33
+start time:2026-08-30 12:36:36    run 0 days 0 hours 1 minutes
+master pid:81664      runtime:native     event-loop:event    load average:0.35, 0.31, 0.28
+1 workers       3 processes
+worker_name      processes  status
+kode-http        3          [OK]
+----------------------------------------------PROCESS STATUS---------------------------------------------
+pid      memory    listening                      worker_name    connections  total_request  qps    status
+81667    12.00M    http://127.0.0.1:9527          kode-http#0    0            128            3      [idle]
+```
+
+进程表数据来自各 worker 的 1Hz 心跳，写在 `storage/runtime/`（该目录是运行时产物，已加入 `.gitignore`，
+随时可删、会自动重建）。
+
+与 workerman 的差异如实标注：不输出 `exit_status` / `exit_count` 两列——master 循环位于
+`kode/process` 内部，业务层拿不到子进程退出码，与其填 0 假装「零退出」误导排障，不如不列。
+
+---
+
+## 为什么选它
+
+| 痛点 | 本框架的做法 |
+| --- | --- |
+| 错误排查难 | 异常默认返回结构化 JSON，含 `location`（出错文件/行/方法）与 `chain`（完整调用链），开发期直接定位源码 |
+| 重复造轮子 | 能力全部委托 kode 生态包，框架只做薄适配；包升级即能力升级 |
+| 性能 / 常驻 | `kode/process` 多进程常驻内存（零扩展依赖，不锁 Swoole/Workerman） |
+| 多运行时 | 一套业务代码，Fiber / 多进程 / 多线程 / Swoole / 分布式通吃 |
+| 约定清晰 | 路由双模型（属性 + 闭包）、`app/routes/*.php` 即插即用、插件自动发现 |
+
+---
+
+## 内置能力一览
+
+| 能力 | 怎么用 | 底层包 |
 | --- | --- | --- |
-| **① 入门** | 10 分钟跑起第一个接口 | [入门指南](getting-started.md) → [配置与环境变量](config.md) |
-| **② 基础** | 把接口写规范 | [路由](routing.md) → [请求](request.md) → [响应](response.md) → [校验](validation.md) → [异常](errors.md) → [中间件](middleware.md) |
-| **③ 进阶** | 接入数据、消息与异步能力 | 见下方「数据与基础设施」「并发与进程」 |
-| **④ 高级** | 扩展框架、加固生产 | 见下方「扩展机制」「安全与韧性」「生产与运维」 |
+| 路由 | 属性 `#[Get]` / 闭包 `app/routes.php` / `app/routes/*.php` | kode/router + kode/attributes |
+| 请求 / 响应 | 控制器短方法 `input/query/post/param`；`Resp::json/error` | kode/http (PSR-7) |
+| 参数校验 | `$this->validate($data, $rules)` | Symfony Validator |
+| 异常处理 | 全局结构化 JSON（location/chain/trace_id） | kode/exception |
+| 鉴权 / JWT | `jwt()->issue()`、`AuthMiddleware` | kode/jwt |
+| 限流 | `#[RateLimit]` 声明式 + 全局默认，分布式用 Redis | kode/limiting |
+| 熔断 | `breaker()->run($name, $task, $fallback)` | kode/fibers (CircuitBreaker) |
+| HTTP 熔断中间件 | `CircuitBreakerMiddleware`（边缘保护下游，5xx/传输异常计入，OPEN 短路 503） | 框架内置（PSR-15 薄壳层，复用 `Breaker` 注册表） |
+| 重试 | `retry($op, attempts: 3)` + `BackoffStrategy` | 框架内置（固定/指数/去相关抖动，零依赖） |
+| 超时 | `timeout($op, seconds: 2.0)` + `fallback` | 框架内置（fiber 真实抢占 / pcntl / sync 退化，零依赖） |
+| HTTP 重试中间件 | `RetryMiddleware`（安全方法 502/503/504 自动重试，复用 retry 段退避） | 框架内置（PSR-15 薄壳层，复用 `Retry`） |
+| 定时任务 | `#[Cron]` + `kode cron` | kode/process 定时器 |
+| 多进程服务 | `kode start`（--watch 热重载） | kode/process |
+| 缓存 / 队列 / 数据库 / 事件 / HTTP 客户端 / 消息 | `cache()/queue()/db()/event()/http()/messaging()` | kode/cache · queue · database · event · http-client · messaging |
+| 国际化 | `lang()` / `LocaleMiddleware` | Symfony Translation |
+| 分布式 ID | `snowflake()` | kode/process |
+| 配置 / 日志 / 门面 / DI | `config()` / `logger()` / 门面 / `resolve()` | kode/core · Monolog · kode/di |
+| 可观测性 | `/metrics`(Prometheus) + W3C 链路追踪 + `Metrics` 门面 | kode/context + 框架本地薄实现 |
+| 运维与生命周期 | `/health` `/health/ready` `/ping` 探针 + 启动/停机事件 | kode/event + 框架本地薄实现 |
+| 安全与合规 | 安全响应头(CSP/COOP/CORP) + 审计日志(脱敏/业务事件/取证) + CSRF 防护(按需挂载·csrf.failed 安全事件·csrf_token_rotate 会话固定防护) + API 版本化 | 框架本地薄实现 |
+| API 文档自动化 | `/docs/openapi.json` + Swagger UI + `#[OpenApi]` | 框架本地薄实现 |
 
-> 参考 webman / Hyperf 的设计哲学：**薄内核 + 复用 Composer 生态**。框架只做「启动、容器、路由、统一响应、异常、中间件、韧性层」等地基，其余能力来自 kode 生态包；业务代码不变即可切换运行时（Fiber 协程 / 多进程 / 多线程 / Swoole / 分布式）。
+---
 
-> 📘 **实战教程（推荐从这篇开始）**：[从 0 到上线一个博客 API + 管理后台](tutorial.md) —— 博客式上手指南，对比 webman / Hyperf，覆盖 Composer 安装、注解路由、DI（含最新属性注解）、JWT、ORM、单/多应用与部署压测，配套可运行示例 `examples/api-admin-demo`。
+## 文档导航
 
-## 一、入门
-
-| 文档 | 内容 |
+| 文档 | 看什么 |
 | --- | --- |
-| [入门指南](getting-started.md) | 环境要求 → 安装 → 目录结构 → 第一个接口 → 请求/响应 → 校验 → 运行与排错 |
-| [配置与环境变量](config.md) | `config()` 读取、`.env`、`APP_DEBUG`、生产环境约束 |
-| [控制台命令](console.md) | `kode` 常用命令、`make:*` 生成器、自定义命令 |
-| [多进程 HTTP 服务](http-server.md) | `serve` 命令、worker 数量、热重载、常驻进程 |
+| [入门指南](https://github.com/kodephp/docs/getting-started.md) | 环境、安装、第一个接口、请求/响应、校验、错误、运行与排错 |
+| [开发文档总览](https://github.com/kodephp/docs/README.md) | 路由全解、中间件编写、鉴权、限流、熔断、定时任务、多进程、缓存/队列/数据库/事件/HTTP、配置、日志、门面与助手、控制台、DI 与服务提供者、AOP、插件、部署、测试（docs/ 文档地图） |
 
-## 二、基础：HTTP 请求处理
+> 建议顺序：先照「入门指南」把第一个接口跑通，再按需查阅「进阶用法」。
 
-| 文档 | 内容 |
+---
+
+## 版本
+
+| 项目 | 值 |
 | --- | --- |
-| [路由全解](routing.md) | 属性路由、`app/routes.php` 闭包路由、REST 资源、参数、分组、来源标签 |
-| [请求对象](request.md) | `input / query / post / param / only` 短方法、Header、文件上传、PSR-7 |
-| [响应对象](response.md) | `json / error / redirect / noContent`，标准 JSON 输出约定 |
-| [参数校验](validation.md) | Symfony Validator、字符串管道规则、422 失败映射 |
-| [异常处理](errors.md) | 结构化错误 JSON、`location`/`chain`、生产收敛、自定义错误码 |
-| [自己写中间件](middleware.md) | PSR-15 管道、框架内置中间件、自定义中间件 |
-| [日志](logging.md) | Monolog 通道、级别、上下文、AccessLog |
-| [门面与全局助手](facades.md) | `Facade`、`resolve() / app() / config()` 等助手 |
+| 骨架版本 | **v1.3.0**（`composer.json` 的 `version`、`config/app.php` 的 `app.version`、git tag 三者同步） |
+| 包名 | `kode/skeleton`（`type: project`，用于 `composer create-project`） |
+| 仓库 | <https://github.com/kodephp/skeleton> |
+| 依赖内核 | `kode/framework` `^1.1`（当前 v1.3.0） |
 
-## 三、进阶：数据与基础设施
+两个版本号是**独立演进**的：
 
-| 文档 | 内容 |
-| --- | --- |
-| [数据库](database.md) | kode/database 薄封装：连接池、Schema 门面、Model、迁移命令、标识符安全 |
-| [缓存](cache.md) | kode/cache（PSR-16）：file / array / redis |
-| [队列](queue.md) | kode/queue 内建 Worker、#[AsJob] 自动发现、不可变消息 |
-| [事件](events.md) | kode/event 派发 / 监听 / 订阅者 |
-| [定时任务](scheduling.md) | `#[Cron]` 属性扫描、类级/方法级、常驻调度器 |
-| [消息总线](messaging.md) | kode/messaging 长连接 / 实时协议 |
-| [HTTP 客户端](http-client.md) | kode/http-client（PSR-18）：超时、重试、中间件 |
-| [国际化](i18n.md) | 多模块多域（`module::key`）、symfony/translation、Accept-Language |
+- `kode/framework` —— 框架内核，版本常量 `Kode\Framework\Application::VERSION`，也是内置 `/health` 端点返回的 `version`。
+- `kode/skeleton` —— 本骨架（项目模板），版本见 `config('app.version')`。骨架升级（改默认配置、加示例控制器）不要求内核发版，反之亦然。
 
-## 四、并发与进程
+发行记录：<https://github.com/kodephp/skeleton/releases>
 
-| 文档 | 内容 |
-| --- | --- |
-| [自定义进程](process.md) | `app/process` 常驻 Worker：心跳、消费者、清理器 |
-| [应用生命周期](lifecycle.md) | 启动引导、ServiceProvider 阶段、优雅退出 |
-| [多运行时](http-server.md) | Native / Swoole / Workerman 切换（`KODE_RUNTIME`） |
+## 许可证
 
-## 五、安全与韧性
-
-| 文档 | 内容 |
-| --- | --- |
-| [鉴权（JWT）](auth.md) | kode/jwt 门面、Guard、续期、黑名单 |
-| [限流](rate-limit.md) | kode/limiting 多算法、属性、分布式 |
-| [熔断](circuit-breaker.md) | kode/fibers CircuitBreaker 保护下游 |
-| [跨域 CORS 与安全响应头](cors.md) | 预检、安全头中间件 |
-| [CSRF 防护](csrf.md) | token 校验、排除路径、审计 |
-| [安全与合规](security-compliance.md) | 审计日志、API 版本化、安全头（CSP/COOP/CORP） |
-
-## 六、扩展机制
-
-| 文档 | 内容 |
-| --- | --- |
-| [DI 与服务提供者](di.md) | 容器、singleton / bind / alias、ServiceProvider 启动钩子 |
-| [AOP 切面](aop.md) | kode/aop 属性切面、前置/环绕通知、自动发现 |
-| [插件](plugins.md) | PluginInterface + PluginManager，复用路由/事件/控制台 |
-| [可观测性](observability.md) | 指标（Prometheus）+ 链路追踪（W3C traceparent）+ `/metrics` |
-| [API 文档自动化](api-docs.md) | OpenAPI 3.0 生成 + `/docs` Swagger UI + `#[OpenApi]` |
-| [健壮性设计](robustness.md) | 错误处理器防御、链路外层不可失败、.env 解析、CLI 优雅退出 |
-
-## 七、生产与运维
-
-| 文档 | 内容 |
-| --- | --- |
-| [部署到生产](deployment.md) | 进程管理器拉起、生产 `.env`、健康检查、多实例 |
-| [测试](testing.md) | PHPUnit、安全/功能用例、离线隔离约定 |
-| [性能基线存档](benchmarks.md) | v1.0.51 真机横比结论与压测方法（历史归档） |
-| [1.x 生产化路线](roadmap-v1x.md) | 0.9→1.0 版本路线、横比规程、清理决策 |
-| [kode 包问题清单](dev/kode-package-issues.md) | vendor 侧已知问题与修复状态（仅供包侧/维护者） |
-| [kode/process 问题清单](dev/kode-process-issues.md) | process 运行时缺陷修复记录（已合入 5.2.36） |
-
-## 一句话定位
-
-- **薄核 + 接线点**：框架只做「启动、容器、路由、统一响应、异常、中间件、韧性层」等地基，能力尽量复用 kode 生态包，不重复造轮子（与 webman / Hyperf 的「最小内核 + Composer 生态」理念一致）。
-- **默认结构化错误**：异常自动转为 JSON，含出错文件/行号与调用链，便于直接定位源码；生产环境自动收敛细节。
-- **少写样板**：短方法取参（`input / query / post / param`）、统一响应助手、门面与全局助手，业务代码保持简洁。
+MIT（兼容 `kode/jwt` 的 Apache-2.0；重新分发请保留其第三方许可说明）。
