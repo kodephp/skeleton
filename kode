@@ -8,7 +8,13 @@ declare(strict_types=1);
  *
  * 本文件只做定位 + 转发，不含业务逻辑——框架 `composer update` 后新命令
  * （start/status/…）自动生效，无需重建项目；切勿在此复制第二份实现。
+ *
+ * 同时声明项目根，供被转发的框架 CLI 定位 .env / storage（否则转发后框架
+ * 按自身 __DIR__ 会把 init 产物写进 vendor/kode/framework 目录）。
  */
+if (!defined('KODE_PROJECT_ROOT')) {
+    define('KODE_PROJECT_ROOT', __DIR__);
+}
 $root = __DIR__;
 $candidates = [
     $root . '/vendor/kode/framework/kode',

@@ -20,7 +20,7 @@ php kode start
 
 # 3. 验证
 curl http://127.0.0.1:9527/health
-# {"status":"ok","service":"kode-app","version":"1.1.7","php":"8.3.33","env":"local","time":"..."}
+# {"status":"ok","service":"kode-app","version":"1.1.8","php":"8.3.33","env":"local","time":"..."}
 ```
 
 > **为什么多了 `--repository`**：`kode/skeleton` 与 `kode/framework` 目前都**未提交到 Packagist**，
@@ -66,7 +66,9 @@ curl "http://127.0.0.1:9527/hello?name=Kode"   # {"hello":"Kode"}
 
 ## 服务运维命令（对标 workerman）
 
-> 项目根 `kode` 与 `bin/kode` 在本骨架里都是**薄壳转发**：唯一实现在 `vendor/kode/framework/kode`。
+> 项目根 `kode` 与 `bin/kode` 在本骨架里都是**薄壳转发**：唯一实现在 `vendor/kode/framework/kode`
+> （旧版回退 `vendor/kode/framework/bin/kode`）。入口同时声明 `KODE_PROJECT_ROOT`，
+> 使转发的框架 CLI 能定位项目根（否则 `init` 会把 `.env` 误写进 vendor 目录）。
 > 这样 CLI 能力随 `composer update` 一起升级，不会出现「骨架一份、框架一份」的命令漂移。
 
 启动时打印进程表横幅，**协议 / 用户 / worker 名 / 监听地址与端口 / 进程数 / 状态**一目了然：
@@ -74,7 +76,7 @@ curl "http://127.0.0.1:9527/hello?name=Kode"   # {"hello":"Kode"}
 ```text
 Kode[bin/kode] start in PRODUCTION mode
 --- KODE ---------------------------------------------------------------------
-Kode Framework version:1.1.7          PHP version:8.3.33
+Kode Framework version:1.1.8          PHP version:8.3.33
 Runtime:native                   Event-Loop:event
 --- WORKERS ------------------------------------------------------------------
 proto    user       worker           listen                       processes  status
@@ -96,7 +98,7 @@ Press Ctrl+C to stop. Start success.
 
 ```text
 ----------------------------------------------GLOBAL STATUS----------------------------------------------
-Kode Framework version:1.1.7        PHP version:8.3.33
+Kode Framework version:1.1.8        PHP version:8.3.33
 start time:2026-08-30 12:36:36    run 0 days 0 hours 1 minutes
 master pid:81664      runtime:native     event-loop:event    load average:0.35, 0.31, 0.28
 1 workers       3 processes
@@ -170,10 +172,10 @@ pid      memory    listening                      worker_name    connections  to
 
 | 项目 | 值 |
 | --- | --- |
-| 骨架版本 | **v1.1.7**（`composer.json` 的 `version`、`config/app.php` 的 `app.version`、git tag 三者同步） |
+| 骨架版本 | **v1.1.8**（`composer.json` 的 `version`、`config/app.php` 的 `app.version`、git tag 三者同步） |
 | 包名 | `kode/skeleton`（`type: project`，用于 `composer create-project`） |
 | 仓库 | <https://github.com/kodephp/skeleton> |
-| 依赖内核 | `kode/framework` `^1.1`（当前 v1.1.7） |
+| 依赖内核 | `kode/framework` `^1.1`（当前 v1.1.8） |
 
 两个版本号是**独立演进**的：
 
