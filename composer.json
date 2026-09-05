@@ -2,9 +2,14 @@
     "name": "kode/skeleton",
     "description": "Kode Framework Skeleton —— composer create-project 后自动生成 app/config 等骨架",
     "type": "project",
-    "keywords": ["kode", "skeleton", "hyperf", "webman"],
+    "keywords": [
+        "kode",
+        "skeleton",
+        "hyperf",
+        "webman"
+    ],
     "license": "MIT",
-    "version": "1.1.0",
+    "version": "1.1.5",
     "repositories": [
         {
             "type": "vcs",
@@ -32,15 +37,21 @@
             "app\\tests\\": "tests/"
         }
     },
-    "bin": ["bin/kode"],
+    "bin": [
+        "kode",
+        "bin/kode"
+    ],
     "config": {
         "sort-packages": true,
         "optimize-autoloader": true,
-        "allow-plugins": {"*": true}
+        "allow-plugins": {
+            "*": true
+        }
     },
     "scripts": {
-        "post-create-project-cmd": "php bin/kode init",
-        "serve": "php bin/kode serve",
+        "post-create-project-cmd": "php kode init",
+        "start": "php kode start",
+        "serve": "php kode start",
         "test": "php vendor/bin/phpunit"
     },
     "minimum-stability": "dev",
