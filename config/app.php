@@ -16,7 +16,7 @@ return [
      * （项目模板）的版本，两者独立演进。业务若要在 /health 之外暴露骨架版本，读本键即可：
      *   config('app.version') 或 config()->get('app.version')
      */
-    'version' => env('APP_VERSION', '1.1.5'),
+    'version' => env('APP_VERSION', '1.1.6'),
 
     'debug' => (bool) env('APP_DEBUG', false),
     'timezone' => env('APP_TIMEZONE', 'Asia/Shanghai'),
