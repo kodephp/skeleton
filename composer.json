@@ -9,7 +9,7 @@
         "webman"
     ],
     "license": "MIT",
-    "version": "1.1.8",
+    "version": "1.1.9",
     "repositories": [
         {
             "type": "vcs",
@@ -38,8 +38,7 @@
         }
     },
     "bin": [
-        "kode",
-        "bin/kode"
+        "kode"
     ],
     "config": {
         "sort-packages": true,

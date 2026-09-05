@@ -9,18 +9,18 @@
  */
 
 return [
-    'default' => env('DB_CONNECTION', 'mysql'),
+    // 默认 pgsql 单连接（统一 DB_* 命名；历史 mysql 已移除，sqlite 仅本地零配置备用）。
+    'default' => env('DB_CONNECTION', 'pgsql'),
 
     'connections' => [
-        'mysql' => [
-            'driver' => 'mysql',
+        'pgsql' => [
+            'driver' => 'pgsql',
             'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => (int) env('DB_PORT', 3306),
+            'port' => (int) env('DB_PORT', 5432),
             'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
             'password' => env('DB_PASSWORD', ''),
-            'charset' => 'utf8mb4',
-            'collation' => 'utf8mb4_unicode_ci',
+            'charset' => 'utf8',
             'prefix' => '',
             // 连接池（生产级，H1）：kode/database 的 PoolManager 仅当存在 pool 段时建池。
             // Native 下退化为 ProcessPool（per-worker 复用），Swoole/Fiber 下为对应协程池。

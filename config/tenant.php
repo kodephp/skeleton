@@ -55,7 +55,7 @@ return [
         'strategy' => env('TENANT_STORAGE_STRATEGY', 'shared'),
 
         // database/schema 策略的模板连接（取自 config/database.php 的 connections 键）。
-        'template' => env('TENANT_STORAGE_TEMPLATE', 'mysql'),
+        'template' => env('TENANT_STORAGE_TEMPLATE', 'pgsql'),
 
         // database/schema 策略的库名前缀（拼接 sanitize 后的租户标识）。
         'prefix' => env('TENANT_DB_PREFIX', 'tnt_'),
