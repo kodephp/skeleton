@@ -9,7 +9,7 @@
         "webman"
     ],
     "license": "MIT",
-    "version": "1.3.4",
+    "version": "1.3.5",
     "repositories": [
         {
             "type": "vcs",
@@ -51,6 +51,10 @@
         "post-create-project-cmd": "php kode init",
         "start": "php kode start",
         "serve": "php kode start",
+        "stop": "php kode stop",
+        "restart": "php kode restart",
+        "reload": "php kode reload",
+        "status": "php kode status",
         "test": "php vendor/bin/phpunit"
     },
     "minimum-stability": "dev",
