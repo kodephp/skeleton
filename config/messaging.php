@@ -20,10 +20,12 @@ declare(strict_types=1);
  */
 
 return [
-    // 总线驱动：messaging:consume 不带 --driver 时读这个键（框架 >= 1.7.7 会回退到 pubsub.default）。
+    // 总线驱动：messaging:consume 的取值口径为 --driver > 本键 > pubsub.default > memory（框架 >= 1.7.7）。
     // 它与下面 pubsub.default 是两回事——前者决定「消费进程连哪条总线」，后者决定
-    // Messaging::pubsub() 无参调用时的默认总线。两处要么保持一致，要么只留一处并显式传参。
-    'default' => env('MESSAGING_DEFAULT', 'memory'),
+    // Messaging::pubsub() 无参调用（即生产端）时的默认总线。这里刻意留空：
+    // 写死值会让人改了 pubsub.default 仍被本键盖住（生产/消费两端悄悄跑在不同总线上），
+    // 只配 pubsub.default 一处即可让两端同步；确要分开时再显式设置本键或传 --driver。
+    'default' => env('MESSAGING_DEFAULT', ''),
 
     // WebSocket（Messaging::server('ws://0.0.0.0:8080')）
     'ws' => [
