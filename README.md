@@ -77,7 +77,7 @@ curl "http://127.0.0.1:9527/hello?name=Kode"   # {"hello":"Kode"}
 ```text
 Kode[kode] start in PRODUCTION mode
 --- KODE ---------------------------------------------------------------------
-Kode Framework version:1.7.7          PHP version:8.3.33
+Kode Framework version:1.7.8          PHP version:8.3.33
 Runtime:native                   Event-Loop:event
 --- WORKERS ------------------------------------------------------------------
 proto    user       worker           listen                       processes  status
@@ -109,7 +109,7 @@ Press Ctrl+C to stop. Start success.
 
 ```text
 ----------------------------------------------GLOBAL STATUS----------------------------------------------
-Kode Framework version:1.7.7        PHP version:8.3.33
+Kode Framework version:1.7.8        PHP version:8.3.33
 start time:2026-08-30 12:36:36    run 0 days 0 hours 1 minutes
 master pid:81664      runtime:native     event-loop:event    load average:0.35, 0.31, 0.28
 1 workers       3 processes
@@ -183,10 +183,10 @@ pid      memory    listening                      worker_name    connections  to
 
 | 项目 | 值 |
 | --- | --- |
-| 骨架版本 | **v1.3.11**（`composer.json` 的 `version`、`config/app.php` 的 `app.version`、git tag 三者同步） |
+| 骨架版本 | **v1.3.12**（`composer.json` 的 `version`、`config/app.php` 的 `app.version`、git tag 三者同步） |
 | 包名 | `kode/skeleton`（`type: project`，用于 `composer create-project`） |
 | 仓库 | <https://github.com/kodephp/skeleton> |
-| 依赖内核 | `kode/framework` `^1.7.7` |
+| 依赖内核 | `kode/framework` `^1.7.8` |
 
 两个版本号是**独立演进**的：
 

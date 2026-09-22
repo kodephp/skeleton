@@ -63,4 +63,15 @@ return [
      */
     'leak_rollback' => (bool) env('DB_LEAK_ROLLBACK', true),
     'release_per_request' => (bool) env('DB_RELEASE_PER_REQUEST', false),
+
+    /*
+     * 慢查询 / 失败查询日志（kode/framework >= 1.7.8 读本段，事件来自 kode/database >= 1.20）。
+     * enabled 后每条 SQL 都会测量耗时并派发 SqlEvent（执行器侧观测切面随之开启，开销小但非零），
+     * 耗时 >= threshold（秒）记 warning「慢查询」，执行失败的记 error「SQL 执行失败」（不看耗时）。
+     * 日志只含 连接名/耗时/SQL 文本，绑定参数不入日志（PII 红线）。threshold 配 0/负数按误配回退 1。
+     */
+    'slow_log' => [
+        'enabled' => (bool) env('DB_SLOW_LOG', false),
+        'threshold' => (float) env('DB_SLOW_LOG_THRESHOLD', 1),
+    ],
 ];
