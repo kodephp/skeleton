@@ -10,7 +10,7 @@
 /.workbuddy/           export-ignore
 /.github/              export-ignore
 
-# 运行时产物（仅保留目录占位 .gitkeep，由 bin/kode init 重建）
+# 运行时产物（仅保留目录占位 .gitkeep，由 kode init 重建）
 /storage/cache/*       export-ignore
 /storage/logs/*        export-ignore
 /storage/framework/*   export-ignore

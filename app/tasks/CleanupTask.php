@@ -10,8 +10,8 @@ use Kode\Framework\Scheduling\Task;
 /**
  * 示例定时任务：类级 #[Cron] 声明，每天 0 点执行一次。
  *
- * 运行：bin/kode cron   （常驻调度器会自动发现并执行）
- * 查看：bin/kode schedule:list
+ * 运行：kode cron   （常驻调度器会自动发现并执行）
+ * 查看：kode schedule:list
  */
 #[Cron('0 0 * * *', name: 'nightly-cleanup', description: '每天 0 点清理过期缓存与临时文件')]
 final class CleanupTask extends Task

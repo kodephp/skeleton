@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a9a60dbf5f99455a47597cf7ab2deab2",
+    "content-hash": "3537507cd4cd8ef0aae5436e76dd6d3a",
     "packages": [
         {
             "name": "guzzlehttp/psr7",
@@ -905,16 +905,16 @@
         },
         {
             "name": "kode/framework",
-            "version": "1.7.4",
+            "version": "1.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/framework.git",
-                "reference": "78edc1ad70a2fafc9ae9de402aece8f14bd0191d"
+                "reference": "55de48bdc298b1f275ee03662ab4f0fec3612a5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/framework/zipball/78edc1ad70a2fafc9ae9de402aece8f14bd0191d",
-                "reference": "78edc1ad70a2fafc9ae9de402aece8f14bd0191d",
+                "url": "https://api.github.com/repos/kodephp/framework/zipball/55de48bdc298b1f275ee03662ab4f0fec3612a5e",
+                "reference": "55de48bdc298b1f275ee03662ab4f0fec3612a5e",
                 "shasum": ""
             },
             "require": {
@@ -1021,10 +1021,10 @@
                 "runtime"
             ],
             "support": {
-                "source": "https://github.com/kodephp/framework/tree/v1.7.4",
+                "source": "https://github.com/kodephp/framework/tree/v1.7.5",
                 "issues": "https://github.com/kodephp/framework/issues"
             },
-            "time": "2026-09-22T13:27:55+00:00"
+            "time": "2026-09-22T14:00:11+00:00"
         },
         {
             "name": "kode/http",

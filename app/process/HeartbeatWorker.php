@@ -10,8 +10,8 @@ use Kode\Framework\Process\Worker;
  * 演示常驻 worker：周期性把心跳写入 storage/heartbeat.log。
  *
  * 仅作示例。启用方式：取消 config/process.php 里 workers 的注释。
- * 验证（不 fork）：bin/kode console process:check
- * 启动（fork）  ：bin/kode console process:start
+ * 验证（不 fork）：kode console process:check
+ * 启动（fork）  ：kode console process:start
  */
 final class HeartbeatWorker extends Worker
 {

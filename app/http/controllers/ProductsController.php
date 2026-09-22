@@ -24,7 +24,7 @@ use Kode\Limiting\Attribute\RateLimit;
  * 同时演示声明式限流 #[RateLimit]：类级规则对所有方法生效，方法级规则叠加。
  * 把 config/limiting.php 的 driver 改为 redis 即让这些限额变为分布式。
  *
- * 可用 `php bin/kode console route:list` 查看自动登记的路由。
+ * 可用 `php kode console route:list` 查看自动登记的路由。
  */
 #[RouteController(prefix: '/products')]
 #[RateLimit(capacity: 100, rate: 5.0, key: 'products:{ip}')]

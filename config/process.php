@@ -7,7 +7,7 @@ declare(strict_types=1);
  *
  * 在此声明要常驻运行的 worker 列表；框架启动时只**注册**到
  * Kode\Framework\Process\ProcessManager（单例，门面 Process / 助手 process()），**不会自动运行**——
- * 真正 fork 常驻进程由 `php bin/kode console process:start` 完成（见 docs/process.md）。
+ * 真正 fork 常驻进程由 `php kode console process:start` 完成（见 docs/process.md）。
  *
  * workers 支持三种写法（相互兼容）：
  *   1) 无参 worker：直接写类名
@@ -35,8 +35,8 @@ declare(strict_types=1);
  *   - slots()     执行槽位列表（[] = 全部实例，[0] = 仅主进程槽位）
  *   - once()      是否一次性任务（启动执行一遍即退出）
  *
- * 启动：bin/kode console process:start
- * 验证（不 fork）：bin/kode console process:check
+ * 启动：kode console process:start
+ * 验证（不 fork）：kode console process:check
  */
 return [
     // 示例：启用一个演示 worker（心跳写入 storage/heartbeat.log）。

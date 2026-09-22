@@ -5,7 +5,7 @@ declare(strict_types=1);
 use Kode\Framework\Database\Seeder;
 
 /**
- * 默认填充器（由 make/脚手架预置，开箱即可 `php bin/kode db:seed`）。
+ * 默认填充器（由 make/脚手架预置，开箱即可 `php kode db:seed`）。
  *
  * 在此聚合各业务 seeder，例如：
  *   $this->call(UsersTableSeeder::class);

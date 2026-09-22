@@ -8,8 +8,8 @@ use Kode\Framework\Database\Schema;
 /**
  * 示例迁移：创建 users 表。
  *
- * 运行：php bin/kode migrate
- * 回滚：php bin/kode migrate:rollback
+ * 运行：php kode migrate
+ * 回滚：php kode migrate:rollback
  */
 final class CreateUsersTable extends Migration
 {

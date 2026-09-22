@@ -12,9 +12,12 @@ RUN --mount=type=cache,target=/tmp/cache \
     || composer update --no-dev --optimize-autoloader --no-interaction --no-progress --prefer-dist
 
 FROM php:8.3-cli
-# 系统依赖：ext 所需（pcntl/posix 已内置，swoole 按需外挂）
-RUN apt-get update && apt-get install -y --no-install-recommends libzip-dev libicu-dev \
-    && docker-php-ext-install zip opcache \
+# 系统依赖：pcntl/posix 已内置于 cli 镜像；zip 供 ext-zip。
+# pdo_pgsql 必装：config/database.php 的默认连接就是 pgsql，缺驱动会在首个 DB 调用时
+# 抛 "could not find driver"（官方 php:8.3-cli 不自带它，需 libpq-dev 现编）。
+# 换 DB_CONNECTION=mysql 时把 pdo_pgsql 换成 pdo_mysql，别两个都塞进镜像。
+RUN apt-get update && apt-get install -y --no-install-recommends libzip-dev libpq-dev libicu-dev \
+    && docker-php-ext-install zip opcache pdo_pgsql \
     && rm -rf /var/lib/apt/lists/*
 
 # opcache 生产配置
@@ -44,6 +47,8 @@ EXPOSE 9527
 HEALTHCHECK --interval=10s --timeout=2s --retries=3 --start-period=10s \
     CMD php -r 'exit(@file_get_contents("http://127.0.0.1:9527/health/live") ? 0 : 1);'
 
-ENTRYPOINT ["php", "bin/kode", "serve"]
+# 入口是项目根的 kode 薄壳（转发 vendor/kode/framework/kode）。历史版本此处写作
+# ["php","bin/kode","serve"]：bin/ 目录已在骨架 v1.2.0 移除，镜像里必然 Could not open input file。
+ENTRYPOINT ["php", "kode", "start"]
 # 默认参数可被 k8s args 覆盖
 CMD ["--host", "0.0.0.0", "--port", "9527"]

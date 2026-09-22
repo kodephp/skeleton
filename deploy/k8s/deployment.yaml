@@ -6,7 +6,7 @@ metadata:
   name: kode-app-secret
 type: Opaque
 stringData:
-  # 生产务必替换为强随机值（bin2hex(random_bytes(32))），与 bin/kode init 保持一致
+  # 生产务必替换为强随机值（bin2hex(random_bytes(32))），与 `php kode init` 保持一致
   JWT_SECRET: "__CHANGE_ME__"
   DB_PASSWORD: "__CHANGE_ME__"
   REDIS_PASSWORD: ""

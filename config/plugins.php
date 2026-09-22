@@ -8,7 +8,7 @@
  *  - register()：绑定服务、注册路由/监听器/命令；
  *  - boot()：插件自身初始化。
  *
- * 插件路由会自动打上 plugin:<name> 来源标签，可用 `bin/kode route:list --source=plugin:blog` 查看。
+ * 插件路由会自动打上 plugin:<name> 来源标签，可用 `kode route:list --source=plugin:blog` 查看。
  */
 
 return [

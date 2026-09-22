@@ -16,15 +16,12 @@ if (!defined('KODE_PROJECT_ROOT')) {
     define('KODE_PROJECT_ROOT', __DIR__);
 }
 $root = __DIR__;
-$candidates = [
-    $root . '/vendor/kode/framework/kode',
-    $root . '/vendor/kode/framework/bin/kode',
-];
-foreach ($candidates as $fwBin) {
-    if (is_file($fwBin) && realpath($fwBin) !== realpath(__FILE__)) {
-        require $fwBin;
-        exit(0);
-    }
+// 只认框架根 CLI：kode/framework 自 v1.0.0 起把脚本收在包根（composer.json 的 bin 声明），
+// 曾在此保留的 bin/kode 回退早已无对应文件，留着只会让人误以为存在 bin/ 入口。
+$frameworkCli = $root . '/vendor/kode/framework/kode';
+if (is_file($frameworkCli) && realpath($frameworkCli) !== realpath(__FILE__)) {
+    require $frameworkCli;
+    exit(0);
 }
 
 fwrite(STDERR, "无法定位框架 CLI（vendor/kode/framework 未安装），请先执行 composer install。\n");

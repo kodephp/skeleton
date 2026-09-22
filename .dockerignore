@@ -1,0 +1,21 @@
+# 构建上下文瘦身 + 防泄漏：这些路径绝不能进镜像层。
+#
+# .env 是硬红线——本地开发几乎必然存在一份，一旦 COPY . . 把它烘进镜像层，
+# 推上 registry 就等于把 JWT_SECRET / DB 密码公开（删掉文件也取不回已推送的层）。
+# vendor 也排除：依赖由 vendor 阶段 composer install --no-dev 现装，
+# 带上宿主那份会把 require-dev（phpunit 等）一起送进生产镜像。
+.git
+.gitignore
+.gitattributes
+.env
+.env.local
+.env.*.local
+vendor
+node_modules
+tests
+storage/*
+.phpunit.cache
+.workbuddy
+.DS_Store
+Dockerfile
+.dockerignore

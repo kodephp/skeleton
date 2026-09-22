@@ -10,7 +10,7 @@ declare(strict_types=1);
  */
 return [
     // 总开关（默认关闭：不挂载 /docs 与 /docs/openapi.json 端点）。
-    // 需要在线浏览 API 文档时置为 true；离线生成请走 `bin/kode apidoc:generate`。
+    // 需要在线浏览 API 文档时置为 true；离线生成请走 `kode apidoc:generate`。
     'enabled' => false,
 
     // OpenAPI info

@@ -53,10 +53,11 @@ final class SkeletonSmokeTest extends TestCase
     }
 
     /**
-     * 骨架版本契约：config(app.version) 必须存在且非空。
+     * 骨架版本契约：config(app.version) 必须与 composer.json 的 version 同值。
      *
-     * 与 composer.json 的 version 字段、git tag 三者同步；任一处漏改都会在发版后
-     * 让运维无法判断线上应用的骨架版本，故在此固化为断言。
+     * 骨架版本、composer.json 的 version、git tag 三者同步是发版约定；此前只断言「非空且像
+     * 版本号」，而 phpunit.xml 还注入了 APP_VERSION=1.0.0 覆盖默认值，等于把漂移的三处缩成
+     * 一处自证。现在两者直接比对（create-project 若剥掉 version 字段则跳过该项）。
      */
     public function test_skeleton_version_is_configured(): void
     {
@@ -68,6 +69,21 @@ final class SkeletonSmokeTest extends TestCase
             '/^\d+\.\d+\.\d+/',
             $version,
             'config(app.version) 必须是语义化版本号，当前值：' . $version
+        );
+
+        $manifest = json_decode(
+            (string) file_get_contents(dirname(__DIR__) . '/composer.json'),
+            true
+        );
+        $declared = is_array($manifest) ? ($manifest['version'] ?? null) : null;
+        if (!is_string($declared)) {
+            return;
+        }
+
+        self::assertSame(
+            $declared,
+            $version,
+            'composer.json 的 version 与 config(app.version) 必须同步（发版三处一致：tag/composer.json/config）'
         );
     }
 

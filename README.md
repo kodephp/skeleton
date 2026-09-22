@@ -75,9 +75,9 @@ curl "http://127.0.0.1:9527/hello?name=Kode"   # {"hello":"Kode"}
 启动时打印进程表横幅，**协议 / 用户 / worker 名 / 监听地址与端口 / 进程数 / 状态**一目了然：
 
 ```text
-Kode[bin/kode] start in PRODUCTION mode
+Kode[kode] start in PRODUCTION mode
 --- KODE ---------------------------------------------------------------------
-Kode Framework version:1.2.0          PHP version:8.3.33
+Kode Framework version:1.7.5          PHP version:8.3.33
 Runtime:native                   Event-Loop:event
 --- WORKERS ------------------------------------------------------------------
 proto    user       worker           listen                       processes  status
@@ -90,7 +90,7 @@ Press Ctrl+C to stop. Start success.
 | 命令 | 作用 |
 | --- | --- |
 | `php kode start` | 前台启动（非 production 默认热重载，`--no-watch` 关闭；`serve` 为别名） |
-| `php kode start -d` | **守护进程模式**（脱离终端，写 PID 文件，用 `stop` 停止） |
+| `php kode start -d` | **守护进程模式**（脱离终端，写 PID 文件；横幅给出 `php kode stop --port <端口>`，多实例按端口分片） |
 | `php kode status` | workerman 风格状态表：GLOBAL STATUS + 逐进程 PROCESS STATUS |
 | `php kode status --pid=N` | 只看某一个进程（master 或 worker）的详情 |
 | `php kode stop [-g]` | 停止服务（默认 SIGTERM 优雅停机，`-g` 强制 SIGKILL） |
@@ -101,9 +101,15 @@ Press Ctrl+C to stop. Start success.
 > worker。注意这与 workerman 的命名相反（那边 restart 是全量、reload 是平滑），
 > 为统一记忆：**带 e 的 reload 做“全套”（rEload＝Everything），短小的 restart 做“滚动”（rolling）**。
 
+> **容器化**（v1.3.9 起）：根目录 `Dockerfile` 两阶段构建（`composer install --no-dev` → `php:8.3-cli`），
+> 入口是 `php kode start`（**不是** `bin/kode`，那目录 v1.2.0 就没了），`CMD` 显式 `--host 0.0.0.0`，
+> 并 `docker-php-ext-install pdo_pgsql`——默认连接是 pgsql，官方 cli 镜像不自带该驱动，缺了容器一连库就崩。
+> 配套的 `.dockerignore` 同样关键：排除 `.env`（密钥烘进镜像层＝公开密钥）与宿主 `vendor/`
+> （否则 `require-dev` 会盖掉 `--no-dev` 的产物）。详见框架文档「部署到生产 · 容器化」。
+
 ```text
 ----------------------------------------------GLOBAL STATUS----------------------------------------------
-Kode Framework version:1.2.0        PHP version:8.3.33
+Kode Framework version:1.7.5        PHP version:8.3.33
 start time:2026-08-30 12:36:36    run 0 days 0 hours 1 minutes
 master pid:81664      runtime:native     event-loop:event    load average:0.35, 0.31, 0.28
 1 workers       3 processes
@@ -177,10 +183,10 @@ pid      memory    listening                      worker_name    connections  to
 
 | 项目 | 值 |
 | --- | --- |
-| 骨架版本 | **v1.3.8**（`composer.json` 的 `version`、`config/app.php` 的 `app.version`、git tag 三者同步） |
+| 骨架版本 | **v1.3.9**（`composer.json` 的 `version`、`config/app.php` 的 `app.version`、git tag 三者同步） |
 | 包名 | `kode/skeleton`（`type: project`，用于 `composer create-project`） |
 | 仓库 | <https://github.com/kodephp/skeleton> |
-| 依赖内核 | `kode/framework` `^1.7.4` |
+| 依赖内核 | `kode/framework` `^1.7.5` |
 
 两个版本号是**独立演进**的：
 
