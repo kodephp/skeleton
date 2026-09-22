@@ -29,7 +29,9 @@ return [
     // 是否下发 X-Request-Id（链路追踪）。opt-in：默认关，需显式开启才在响应回写链路头。
     'request_id' => (bool) env('SECURITY_REQUEST_ID', false),
 
-    // X-Request-Id 是否允许客户端用同名请求头覆盖（便于跨服务透传）
+    // X-Request-Id 是否允许客户端用同名请求头覆盖（便于跨服务透传链路 ID，默认 true 保持历史行为）。
+    // 该值会原样进访问日志与审计，对外入口建议置 false 改为服务端生成（框架 ≥ 1.7.2 读取此键）；
+    // 即便信任客户端，框架也会先剥掉控制字符/空白并按 128 字符截断。
     'request_id_allow_client' => (bool) env('SECURITY_REQUEST_ID_ALLOW_CLIENT', true),
 
     // ------------------------------------------------------------------

@@ -16,9 +16,11 @@ return [
      * （项目模板）的版本，两者独立演进。业务若要在 /health 之外暴露骨架版本，读本键即可：
      *   config('app.version') 或 config()->get('app.version')
      */
-    'version' => env('APP_VERSION', '1.3.6'),
+    'version' => env('APP_VERSION', '1.3.7'),
 
     'debug' => (bool) env('APP_DEBUG', false),
+    // PHP 默认时区：框架引导期落成 date_default_timezone_set（kode/framework ≥ 1.7.2）。
+    // 影响 date()/日志时间戳/cron 判定；非法值只告警不阻断启动。
     'timezone' => env('APP_TIMEZONE', 'Asia/Shanghai'),
     'env' => env('APP_ENV', 'local'),
 
