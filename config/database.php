@@ -29,6 +29,8 @@ return [
                 'max' => (int) env('DB_POOL_MAX', 10),
                 'min' => (int) env('DB_POOL_MIN', 2),
                 'max_wait_time' => (int) env('DB_POOL_MAX_WAIT', 30),
+                // 仅 Swoole 协程池（kode/database ConnectionPool）会回收空闲连接；
+                // Native 运行时的进程池不做空闲回收，本键届时不生效。
                 'max_idle_time' => (int) env('DB_POOL_MAX_IDLE', 60),
             ] : null,
         ],
@@ -37,12 +39,6 @@ return [
             'driver' => 'sqlite',
             'database' => env('DB_SQLITE_PATH', storage_path('database.sqlite')),
         ],
-    ],
-
-    // 慢查询日志（写入 Monolog）
-    'slow_log' => [
-        'enabled' => true,
-        'threshold' => 0.5,
     ],
 
     /*

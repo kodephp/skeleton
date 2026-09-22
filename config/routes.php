@@ -38,8 +38,10 @@ return [
     ],
 
     // 额外的显式路由文件（key=来源标签，value=文件路径）。
+    // 与上面的 attributes.controllers 同一口径：写「相对项目根」的路径，框架引导期拼 path.base；
+    // 不要用 base_path(...)——配置加载时它退化成 CWD 相对，换个工作目录启动就静默加载 0 条路由。
     // 注意：app/routes.php 与 app/routes/*.php 已由框架自动加载，通常无需在此声明。
     'sources' => [
-        // 'admin' => base_path('app/routes/admin.php'),
+        // 'admin' => 'app/routes/admin.php',
     ],
 ];

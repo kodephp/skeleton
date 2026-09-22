@@ -47,7 +47,7 @@ return [
 
         // 隔离策略：
         //   'shared'  不隔离，始终用默认连接（null 安全，租户仅作为上下文标签）；
-        //   'database'每租户独立数据库，database 名 = prefix + 租户标识（MySQL 适用）；
+        //   'database'每租户独立数据库，database 名 = prefix + sanitize(租户标识)；
         //   'schema'  语义同 database（命名空间隔离），thin-shell 同样落到 database 命名，
         //             应用可在此基础上叠加 schema/search_path 策略；
         //   'map'     显式映射：tenant id => 已注册连接名(string) 或 连接配置覆盖(array)；
@@ -57,15 +57,18 @@ return [
         // database/schema 策略的模板连接（取自 config/database.php 的 connections 键）。
         'template' => env('TENANT_STORAGE_TEMPLATE', 'pgsql'),
 
-        // database/schema 策略的库名前缀（拼接 sanitize 后的租户标识）。
+        // database/schema 策略的库名前缀。拼接对象是 sanitize 后的租户标识：
+        // sanitize 把非 [字母数字下划线] 一律换成 '_'（故 'acme-co' 与 'acme_co' 归并为同一库名，
+        // 租户命名请避开这一点，或改用 map 策略显式登记）。
         'prefix' => env('TENANT_DB_PREFIX', 'tnt_'),
 
         // map 策略的显式映射：tenant id => 连接名 | 部分连接配置覆盖。
         'map' => [],
 
-        // 缺失映射时的行为：
-        //   'fallback' 回退到默认连接（不报错，适合「未登记租户也允许访问共享库」）；
-        //   'abort'    抛出 404（HttpException::notFound），适合「未登记租户一律拒绝」。
+        // 缺失映射时的行为（仅 map / 自定义解析器用到；database/schema 恒能派生，不受本键影响）：
+        //   'fallback' 回退到默认连接（不报错）。注意这是「隔离失败于无声」：未登记的租户
+        //              会直接读到共享默认库，安全敏感的部署请用 'abort'；
+        //   'abort'    抛出 404（KodeException::notFound），适合「未登记租户一律拒绝」。
         'on_missing' => env('TENANT_STORAGE_ON_MISSING', 'fallback'),
     ],
 ];

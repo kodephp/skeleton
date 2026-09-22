@@ -3,8 +3,10 @@
 /*
  * 安全响应头配置
  *
- * 默认对所有响应追加工业级安全头（防嗅探、防点击劫持、Referrer 策略、
- * HSTS）。这些头对纯 API 服务也基本无害；如不需要可整体关闭。
+ * 追加工业级安全头（防嗅探、防点击劫持、Referrer 策略、HSTS、CSP 等）。
+ * 总开关 enabled 默认关闭：纯 JSON API 用不到大部分浏览器侧的头部；
+ * 生产环境建议打开（框架在生产检测到 enabled=false 会写一条告警日志）。
+ * 下面的单项只在 enabled=true 时才参与下发。
  */
 
 return [
@@ -40,7 +42,7 @@ return [
 
     // Content-Security-Policy：默认开启一套「纯 API 友好」基线（不含 unsafe-inline，
     // 因 API 通常只返回 JSON，无需执行脚本）。按需收紧 / 放宽。
-    // 设为 false 关闭 CSP 下发。
+    // 置 false 或空串即不下发本头（仍受上面的 enabled 总开关约束）。
     'csp' => env('SECURITY_CSP', "default-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'"),
 
     // Permissions-Policy：禁用浏览器冗余特性（减少攻击面）。
