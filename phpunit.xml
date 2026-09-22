@@ -32,7 +32,8 @@
         <env name="TENANT_RESOLVER" value="header"/>
         <env name="TENANT_STORAGE_ENABLED" value="true"/>
         <env name="TENANT_STORAGE_STRATEGY" value="database"/>
-        <env name="TENANT_STORAGE_TEMPLATE" value="mysql"/>
+        <!-- 模板连接刻意不注入：留空 = 跟随 database.default（框架 >= 1.7.6 起，
+             配了不存在的连接名会在启动期直接抛错，不再静默借用默认凭证）。 -->
         <env name="TENANT_DB_PREFIX" value="tnt_"/>
         <env name="TENANT_STORAGE_ON_MISSING" value="fallback"/>
 

@@ -37,7 +37,9 @@ return [
 
         'sqlite' => [
             'driver' => 'sqlite',
-            'database' => env('DB_SQLITE_PATH', storage_path('database.sqlite')),
+            // 绝对路径由 __DIR__ 推出：配置加载期 app() 尚未就绪，storage_path() 会退化成
+            // 相对当前工作目录（FPM 下 cwd=public/ → 库文件落在 public/storage）。
+            'database' => env('DB_SQLITE_PATH', dirname(__DIR__) . '/storage/database.sqlite'),
         ],
     ],
 

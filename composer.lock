@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3537507cd4cd8ef0aae5436e76dd6d3a",
+    "content-hash": "55db2fa6cc6b36997b1356976106202e",
     "packages": [
         {
             "name": "guzzlehttp/psr7",
@@ -259,16 +259,16 @@
         },
         {
             "name": "kode/cache",
-            "version": "1.5.0",
+            "version": "1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/cache.git",
-                "reference": "3e8f72fa051e3fe58706fb3a1ed13947434fb7af"
+                "reference": "ed611e193e8e4543daefeeba22d48eeecdd0907f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/cache/zipball/3e8f72fa051e3fe58706fb3a1ed13947434fb7af",
-                "reference": "3e8f72fa051e3fe58706fb3a1ed13947434fb7af",
+                "url": "https://api.github.com/repos/kodephp/cache/zipball/ed611e193e8e4543daefeeba22d48eeecdd0907f",
+                "reference": "ed611e193e8e4543daefeeba22d48eeecdd0907f",
                 "shasum": ""
             },
             "require": {
@@ -323,9 +323,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kodephp/cache/issues",
-                "source": "https://github.com/kodephp/cache/tree/v1.5.0"
+                "source": "https://github.com/kodephp/cache/tree/v1.5.1"
             },
-            "time": "2026-09-22T01:30:05+00:00"
+            "time": "2026-09-22T15:09:40+00:00"
         },
         {
             "name": "kode/console",
@@ -905,16 +905,16 @@
         },
         {
             "name": "kode/framework",
-            "version": "1.7.5",
+            "version": "1.7.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/framework.git",
-                "reference": "55de48bdc298b1f275ee03662ab4f0fec3612a5e"
+                "reference": "ec7c6157eb46ffbd35549a9d5004c05c41c94a8c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/framework/zipball/55de48bdc298b1f275ee03662ab4f0fec3612a5e",
-                "reference": "55de48bdc298b1f275ee03662ab4f0fec3612a5e",
+                "url": "https://api.github.com/repos/kodephp/framework/zipball/ec7c6157eb46ffbd35549a9d5004c05c41c94a8c",
+                "reference": "ec7c6157eb46ffbd35549a9d5004c05c41c94a8c",
                 "shasum": ""
             },
             "require": {
@@ -1021,10 +1021,10 @@
                 "runtime"
             ],
             "support": {
-                "source": "https://github.com/kodephp/framework/tree/v1.7.5",
+                "source": "https://github.com/kodephp/framework/tree/v1.7.7",
                 "issues": "https://github.com/kodephp/framework/issues"
             },
-            "time": "2026-09-22T14:00:11+00:00"
+            "time": "2026-09-22T15:20:24+00:00"
         },
         {
             "name": "kode/http",

@@ -55,7 +55,9 @@ return [
         'strategy' => env('TENANT_STORAGE_STRATEGY', 'shared'),
 
         // database/schema 策略的模板连接（取自 config/database.php 的 connections 键）。
-        'template' => env('TENANT_STORAGE_TEMPLATE', 'pgsql'),
+        // 留空 = 跟随 database.default（框架 >= 1.7.6）；填了不存在的连接名会在启动期直接报错，
+        // 不再静默借用默认连接的凭证——租户库跑错连接属于「隔离失效于无声」，宁可装不上。
+        'template' => env('TENANT_STORAGE_TEMPLATE', ''),
 
         // database/schema 策略的库名前缀。拼接对象是 sanitize 后的租户标识：
         // sanitize 把非 [字母数字下划线] 一律换成 '_'（故 'acme-co' 与 'acme_co' 归并为同一库名，
