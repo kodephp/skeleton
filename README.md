@@ -197,4 +197,4 @@ pid      memory    listening                      worker_name    connections  to
 
 ## 许可证
 
-MIT（兼容 `kode/jwt` 的 Apache-2.0；重新分发请保留其第三方许可说明）。
+MIT（兼容 kode 生态中以 Apache-2.0 发布的组件，如 `kode/jwt`；重新分发请保留各自 LICENSE）。
