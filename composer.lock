@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3c397e474b4c055df848b8d8381afdf1",
+    "content-hash": "8f0c029d12c9803218af18a0af2df3ef",
     "packages": [
         {
             "name": "guzzlehttp/psr7",
@@ -127,21 +127,21 @@
         },
         {
             "name": "kode/aop",
-            "version": "3.4.0",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/aop.git",
-                "reference": "0a16814ff7c18f68505ae6d55c815db6f76c5cae"
+                "reference": "e311a94c32d69085b7efbcfe31d232393ea7b6e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/aop/zipball/0a16814ff7c18f68505ae6d55c815db6f76c5cae",
-                "reference": "0a16814ff7c18f68505ae6d55c815db6f76c5cae",
+                "url": "https://api.github.com/repos/kodephp/aop/zipball/e311a94c32d69085b7efbcfe31d232393ea7b6e3",
+                "reference": "e311a94c32d69085b7efbcfe31d232393ea7b6e3",
                 "shasum": ""
             },
             "require": {
-                "kode/attributes": "^2.1",
-                "php": "^8.3",
+                "kode/attributes": "^3",
+                "php": "^8.4",
                 "psr/log": "^3",
                 "psr/simple-cache": "^3"
             },
@@ -166,7 +166,7 @@
                     "email": "382601296@qq.com"
                 }
             ],
-            "description": "基于 PHP 8.3+ 原生属性（Attribute）实现的轻量级、高性能、高扩展性 AOP（面向切面编程）组件",
+            "description": "基于 PHP 8.4+ 原生属性（Attribute）实现的轻量级、高性能、高扩展性 AOP（面向切面编程）组件",
             "homepage": "https://github.com/kodephp/aop",
             "keywords": [
                 "aop",
@@ -181,28 +181,28 @@
             ],
             "support": {
                 "issues": "https://github.com/kodephp/aop/issues",
-                "source": "https://github.com/kodephp/aop/tree/v3.4.0"
+                "source": "https://github.com/kodephp/aop/tree/v4.0.0"
             },
-            "time": "2026-09-21T17:14:53+00:00"
+            "time": "2026-10-10T09:16:01+00:00"
         },
         {
             "name": "kode/attributes",
-            "version": "2.2.0",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/attributes.git",
-                "reference": "0a05c1d8c627a5cecfb60b81f962744551ed76f2"
+                "reference": "69c39b6213bcc1d0068f40ef215fca5ece325ef7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/attributes/zipball/0a05c1d8c627a5cecfb60b81f962744551ed76f2",
-                "reference": "0a05c1d8c627a5cecfb60b81f962744551ed76f2",
+                "url": "https://api.github.com/repos/kodephp/attributes/zipball/69c39b6213bcc1d0068f40ef215fca5ece325ef7",
+                "reference": "69c39b6213bcc1d0068f40ef215fca5ece325ef7",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-mbstring": "*",
-                "php": "^8.3"
+                "php": "^8.4"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^3.0",
@@ -232,7 +232,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "轻量级、健壮的 PHP 8.3+ 属性读取器，为 kodephp 框架和主流 PHP 框架提供基础组件支持",
+            "description": "轻量级、健壮的 PHP 8.4+ 属性读取器，为 kodephp 框架和主流 PHP 框架提供基础组件支持",
             "keywords": [
                 "annotations",
                 "attributes",
@@ -255,27 +255,27 @@
                     "type": "custom"
                 }
             ],
-            "time": "2026-09-21T17:40:04+00:00"
+            "time": "2026-10-10T09:03:51+00:00"
         },
         {
             "name": "kode/cache",
-            "version": "1.5.1",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/cache.git",
-                "reference": "ed611e193e8e4543daefeeba22d48eeecdd0907f"
+                "reference": "2cad71460a2f20fefd30390493bce3de2c42df1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/cache/zipball/ed611e193e8e4543daefeeba22d48eeecdd0907f",
-                "reference": "ed611e193e8e4543daefeeba22d48eeecdd0907f",
+                "url": "https://api.github.com/repos/kodephp/cache/zipball/2cad71460a2f20fefd30390493bce3de2c42df1b",
+                "reference": "2cad71460a2f20fefd30390493bce3de2c42df1b",
                 "shasum": ""
             },
             "require": {
-                "kode/context": "^3.2",
-                "kode/exception": "^3.1",
-                "kode/limiting": "^2.3",
-                "php": ">=8.3"
+                "kode/context": "^4",
+                "kode/exception": "^4",
+                "kode/limiting": "^3",
+                "php": "^8.4"
             },
             "require-dev": {
                 "composer/semver": "^3.4",
@@ -323,26 +323,26 @@
             ],
             "support": {
                 "issues": "https://github.com/kodephp/cache/issues",
-                "source": "https://github.com/kodephp/cache/tree/v1.5.1"
+                "source": "https://github.com/kodephp/cache/tree/v2.0.0"
             },
-            "time": "2026-09-22T15:09:40+00:00"
+            "time": "2026-10-10T09:17:08+00:00"
         },
         {
             "name": "kode/console",
-            "version": "4.0.0",
+            "version": "5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/console.git",
-                "reference": "ea27bd9053120224b6a1b3300cd322c10010d048"
+                "reference": "5a3d916ecda3cf81fdd2addba0d091fbbe2e0235"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/console/zipball/ea27bd9053120224b6a1b3300cd322c10010d048",
-                "reference": "ea27bd9053120224b6a1b3300cd322c10010d048",
+                "url": "https://api.github.com/repos/kodephp/console/zipball/5a3d916ecda3cf81fdd2addba0d091fbbe2e0235",
+                "reference": "5a3d916ecda3cf81fdd2addba0d091fbbe2e0235",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.3"
+                "php": "^8.4"
             },
             "require-dev": {
                 "phpstan/phpstan": "^2.0",
@@ -372,7 +372,7 @@
                     "email": "382601296@qq.com"
                 }
             ],
-            "description": "健壮、通用的 PHP 控制台组件，要求 PHP 8.3+，内置签名 DSL、注解式命令、中间件与事件系统",
+            "description": "健壮、通用的 PHP 控制台组件，要求 PHP 8.4+，内置签名 DSL、注解式命令、中间件与事件系统",
             "homepage": "https://github.com/kodephp/console",
             "keywords": [
                 "cli",
@@ -387,26 +387,26 @@
             ],
             "support": {
                 "issues": "https://github.com/kodephp/console/issues",
-                "source": "https://github.com/kodephp/console/tree/v4.0.0"
+                "source": "https://github.com/kodephp/console/tree/v5.0.0"
             },
-            "time": "2026-08-04T15:52:17+00:00"
+            "time": "2026-10-10T09:03:59+00:00"
         },
         {
             "name": "kode/context",
-            "version": "3.2.0",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/context.git",
-                "reference": "7065de3c71733063b488dd30356e32902f856646"
+                "reference": "b35da1be3141016831909a71827b568ebcfc2cda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/context/zipball/7065de3c71733063b488dd30356e32902f856646",
-                "reference": "7065de3c71733063b488dd30356e32902f856646",
+                "url": "https://api.github.com/repos/kodephp/context/zipball/b35da1be3141016831909a71827b568ebcfc2cda",
+                "reference": "b35da1be3141016831909a71827b568ebcfc2cda",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.3"
+                "php": "^8.4"
             },
             "require-dev": {
                 "phpstan/phpstan": "^1.11 || ^2.0",
@@ -463,29 +463,29 @@
                 "issues": "https://github.com/kodephp/context/issues",
                 "source": "https://github.com/kodephp/context"
             },
-            "time": "2026-09-21T15:12:06+00:00"
+            "time": "2026-10-10T09:04:06+00:00"
         },
         {
             "name": "kode/core",
-            "version": "v1.5.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/core.git",
-                "reference": "de1709a8223d8bd00ac38eb48d709cc6f5d02e36"
+                "reference": "a7e9aa0156659cc3435261439c091980e4ec8fca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/core/zipball/de1709a8223d8bd00ac38eb48d709cc6f5d02e36",
-                "reference": "de1709a8223d8bd00ac38eb48d709cc6f5d02e36",
+                "url": "https://api.github.com/repos/kodephp/core/zipball/a7e9aa0156659cc3435261439c091980e4ec8fca",
+                "reference": "a7e9aa0156659cc3435261439c091980e4ec8fca",
                 "shasum": ""
             },
             "require": {
-                "kode/attributes": "^2.1",
-                "kode/context": "^3.1",
-                "kode/di": "^2.2",
-                "kode/facade": "^3.2",
-                "kode/runtime": "^3.4",
-                "php": ">=8.3"
+                "kode/attributes": "^3",
+                "kode/context": "^4",
+                "kode/di": "^3",
+                "kode/facade": "^4",
+                "kode/runtime": "^4",
+                "php": "^8.4"
             },
             "require-dev": {
                 "phpunit/phpunit": "^11.0"
@@ -535,27 +535,27 @@
             ],
             "support": {
                 "issues": "https://github.com/kodephp/core/issues",
-                "source": "https://github.com/kodephp/core/tree/v1.5.0"
+                "source": "https://github.com/kodephp/core/tree/v2.0.0"
             },
-            "time": "2026-09-22T11:48:28+00:00"
+            "time": "2026-10-10T09:52:07+00:00"
         },
         {
             "name": "kode/database",
-            "version": "1.20.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/database.git",
-                "reference": "10e8cba3f661158be37aeb3b5f6039fa49abbfdf"
+                "reference": "edc3054df68898b85c1dcfef4adcd2d73685cd43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/database/zipball/10e8cba3f661158be37aeb3b5f6039fa49abbfdf",
-                "reference": "10e8cba3f661158be37aeb3b5f6039fa49abbfdf",
+                "url": "https://api.github.com/repos/kodephp/database/zipball/edc3054df68898b85c1dcfef4adcd2d73685cd43",
+                "reference": "edc3054df68898b85c1dcfef4adcd2d73685cd43",
                 "shasum": ""
             },
             "require": {
                 "ext-pdo": "*",
-                "php": ">=8.3"
+                "php": "^8.4"
             },
             "require-dev": {
                 "phpunit/phpunit": "^10.0 || ^11.0"
@@ -609,31 +609,31 @@
             ],
             "support": {
                 "issues": "https://github.com/kodephp/database/issues",
-                "source": "https://github.com/kodephp/database/tree/v1.20.0"
+                "source": "https://github.com/kodephp/database/tree/v2.0.0"
             },
-            "time": "2026-09-22T16:51:26+00:00"
+            "time": "2026-10-10T09:04:13+00:00"
         },
         {
             "name": "kode/di",
-            "version": "v2.4.0",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/di.git",
-                "reference": "2a4b78d419cc61a60103bc4c4c21bf9d0d6fdbce"
+                "reference": "1036fd03181431af5a236556f359c6b93588479e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/di/zipball/2a4b78d419cc61a60103bc4c4c21bf9d0d6fdbce",
-                "reference": "2a4b78d419cc61a60103bc4c4c21bf9d0d6fdbce",
+                "url": "https://api.github.com/repos/kodephp/di/zipball/1036fd03181431af5a236556f359c6b93588479e",
+                "reference": "1036fd03181431af5a236556f359c6b93588479e",
                 "shasum": ""
             },
             "require": {
-                "kode/attributes": "^2.1",
-                "php": "^8.3",
+                "kode/attributes": "^3",
+                "php": "^8.4",
                 "psr/container": "^1.1 || ^2.0"
             },
             "require-dev": {
-                "kode/context": "^3.1",
+                "kode/context": "^4",
                 "phpstan/phpstan": "^1.10",
                 "phpunit/phpunit": "^10.0"
             },
@@ -661,7 +661,7 @@
                     "email": "382601296@qq.com"
                 }
             ],
-            "description": "高性能 PHP 8.3+ 依赖注入容器，支持属性注入、生命周期管理、协程上下文隔离，兼容 PSR-11",
+            "description": "高性能 PHP 8.4+ 依赖注入容器，支持属性注入、生命周期管理、协程上下文隔离，兼容 PSR-11",
             "homepage": "https://github.com/kodephp/di",
             "keywords": [
                 "PSR-11",
@@ -673,33 +673,33 @@
                 "fiber",
                 "ioc",
                 "kodephp",
-                "php8.3"
+                "php8.4"
             ],
             "support": {
                 "docs": "https://github.com/kodephp/di#readme",
                 "issues": "https://github.com/kodephp/di/issues",
                 "source": "https://github.com/kodephp/di"
             },
-            "time": "2026-09-21T17:00:41+00:00"
+            "time": "2026-10-10T09:15:48+00:00"
         },
         {
             "name": "kode/event",
-            "version": "1.24.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/event.git",
-                "reference": "f896e13ef7d3417aa76d7acad9c037b91ddf535a"
+                "reference": "c6223266b60eea4e9c4b8f9ce06b41fee4d935e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/event/zipball/f896e13ef7d3417aa76d7acad9c037b91ddf535a",
-                "reference": "f896e13ef7d3417aa76d7acad9c037b91ddf535a",
+                "url": "https://api.github.com/repos/kodephp/event/zipball/c6223266b60eea4e9c4b8f9ce06b41fee4d935e2",
+                "reference": "c6223266b60eea4e9c4b8f9ce06b41fee4d935e2",
                 "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
-                "kode/context": "^3.1",
-                "php": ">=8.3",
+                "kode/context": "^4",
+                "php": "^8.4",
                 "psr/event-dispatcher": "^1.0"
             },
             "require-dev": {
@@ -743,27 +743,27 @@
             ],
             "support": {
                 "issues": "https://github.com/kodephp/event/issues",
-                "source": "https://github.com/kodephp/event/tree/v1.24.0"
+                "source": "https://github.com/kodephp/event/tree/v2.0.0"
             },
-            "time": "2026-09-21T15:50:23+00:00"
+            "time": "2026-10-10T09:16:37+00:00"
         },
         {
             "name": "kode/exception",
-            "version": "3.1.0",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/exception.git",
-                "reference": "7e249314791c3c9b0fe3d8fddb0e286eb30d33b9"
+                "reference": "fe168f49d514e0dc52524e0098d7198904cf9092"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/exception/zipball/7e249314791c3c9b0fe3d8fddb0e286eb30d33b9",
-                "reference": "7e249314791c3c9b0fe3d8fddb0e286eb30d33b9",
+                "url": "https://api.github.com/repos/kodephp/exception/zipball/fe168f49d514e0dc52524e0098d7198904cf9092",
+                "reference": "fe168f49d514e0dc52524e0098d7198904cf9092",
                 "shasum": ""
             },
             "require": {
                 "monolog/monolog": "^3.0",
-                "php": ">=8.3",
+                "php": "^8.4",
                 "psr/log": "^3.0"
             },
             "require-dev": {
@@ -782,27 +782,27 @@
             "description": "kode 统一异常处理包 - 支持 FPM/多进程/多线程/协程/分布式环境",
             "support": {
                 "issues": "https://github.com/kodephp/exception/issues",
-                "source": "https://github.com/kodephp/exception/tree/v3.1.0"
+                "source": "https://github.com/kodephp/exception/tree/v4.0.0"
             },
-            "time": "2026-09-21T16:16:48+00:00"
+            "time": "2026-10-10T09:04:21+00:00"
         },
         {
             "name": "kode/facade",
-            "version": "v3.2.0",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/facade.git",
-                "reference": "9fd3bb352ceca7ded16339282e9e0f9120f1e099"
+                "reference": "c64d1dd05cf8cbd80616819d9f15d4d0ab53aebf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/facade/zipball/9fd3bb352ceca7ded16339282e9e0f9120f1e099",
-                "reference": "9fd3bb352ceca7ded16339282e9e0f9120f1e099",
+                "url": "https://api.github.com/repos/kodephp/facade/zipball/c64d1dd05cf8cbd80616819d9f15d4d0ab53aebf",
+                "reference": "c64d1dd05cf8cbd80616819d9f15d4d0ab53aebf",
                 "shasum": ""
             },
             "require": {
-                "kode/context": "^3.0",
-                "php": "^8.3",
+                "kode/context": "^4",
+                "php": "^8.4",
                 "psr/container": "^1.0 || ^2.0"
             },
             "require-dev": {
@@ -824,7 +824,7 @@
                     "email": "382601296@qq.com"
                 }
             ],
-            "description": "适用于 PHP 8.3+ 的健壮、通用门面组件，兼容 Laravel、Symfony、ThinkPHP、Webman 和 KodePHP。",
+            "description": "适用于 PHP 8.4+ 的健壮、通用门面组件，兼容 Laravel、Symfony、ThinkPHP、Webman 和 KodePHP。",
             "keywords": [
                 "container",
                 "facade",
@@ -835,29 +835,29 @@
             ],
             "support": {
                 "issues": "https://github.com/kodephp/facade/issues",
-                "source": "https://github.com/kodephp/facade/tree/v3.2.0"
+                "source": "https://github.com/kodephp/facade/tree/v4.0.0"
             },
-            "time": "2026-08-05T15:50:57+00:00"
+            "time": "2026-10-10T09:16:08+00:00"
         },
         {
             "name": "kode/fibers",
-            "version": "4.10.0",
+            "version": "5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/fibers.git",
-                "reference": "80dbd4a8d65698ac99f9f98a5a762a1ff64fe8ce"
+                "reference": "81415bf626ce7b276063e4af1b974e787d36dc98"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/fibers/zipball/80dbd4a8d65698ac99f9f98a5a762a1ff64fe8ce",
-                "reference": "80dbd4a8d65698ac99f9f98a5a762a1ff64fe8ce",
+                "url": "https://api.github.com/repos/kodephp/fibers/zipball/81415bf626ce7b276063e4af1b974e787d36dc98",
+                "reference": "81415bf626ce7b276063e4af1b974e787d36dc98",
                 "shasum": ""
             },
             "require": {
                 "guzzlehttp/psr7": "^2.8",
-                "kode/console": "^4.0",
-                "kode/context": "^3.0",
-                "php": "^8.3"
+                "kode/console": "^5",
+                "kode/context": "^4",
+                "php": "^8.4"
             },
             "require-dev": {
                 "amphp/amp": "^3.0",
@@ -899,22 +899,22 @@
             "description": "Kode/Fibers - 高性能 PHP Fiber 协程调度器。提供协程池、上下文传递、分布式调度、断路器、负载均衡、RPC 通信（JSON/gRPC/WebSocket）、分布式事务（2PC/TCC/Saga）、多框架集成等企业级特性。",
             "support": {
                 "issues": "https://github.com/kodephp/fibers/issues",
-                "source": "https://github.com/kodephp/fibers/tree/v4.10.0"
+                "source": "https://github.com/kodephp/fibers/tree/v5.0.0"
             },
-            "time": "2026-08-10T10:20:29+00:00"
+            "time": "2026-10-10T09:16:45+00:00"
         },
         {
             "name": "kode/framework",
-            "version": "1.7.8",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/framework.git",
-                "reference": "20b3748985c32cbada20cb6462693c98f9c45a61"
+                "reference": "7d979cda9c36335676f43e1848f3c8866c12974b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/framework/zipball/20b3748985c32cbada20cb6462693c98f9c45a61",
-                "reference": "20b3748985c32cbada20cb6462693c98f9c45a61",
+                "url": "https://api.github.com/repos/kodephp/framework/zipball/7d979cda9c36335676f43e1848f3c8866c12974b",
+                "reference": "7d979cda9c36335676f43e1848f3c8866c12974b",
                 "shasum": ""
             },
             "require": {
@@ -924,31 +924,31 @@
                 "kode/aop": "*",
                 "kode/attributes": "*",
                 "kode/cache": "*",
-                "kode/console": "*",
+                "kode/console": "^5",
                 "kode/context": "*",
                 "kode/core": "*",
-                "kode/database": "^1.20",
+                "kode/database": "^2",
                 "kode/di": "*",
                 "kode/event": "*",
                 "kode/exception": "*",
                 "kode/facade": "*",
                 "kode/fibers": "*",
-                "kode/http": "^3.5.2",
-                "kode/http-client": "^2.5",
+                "kode/http": "^4",
+                "kode/http-client": "^3",
                 "kode/jwt": "*",
-                "kode/limiting": "^2.0",
-                "kode/messaging": "^3.3",
+                "kode/limiting": "^3",
+                "kode/messaging": "^4",
                 "kode/middleware": "*",
                 "kode/parallel": "*",
-                "kode/process": "^5.2.36",
-                "kode/queue": "^2.2",
+                "kode/process": "^6",
+                "kode/queue": "^3",
                 "kode/router": "*",
                 "kode/runtime": "*",
-                "kode/scheduling": "^1.3",
+                "kode/scheduling": "^2",
                 "kode/session": "*",
                 "monolog/monolog": "^3.0",
                 "nyholm/psr7": "^1.8",
-                "php": ">=8.3",
+                "php": "^8.4",
                 "psr/container": "^2.0",
                 "psr/http-factory": "^1.0",
                 "psr/http-message": "^2.0",
@@ -1021,29 +1021,29 @@
                 "runtime"
             ],
             "support": {
-                "source": "https://github.com/kodephp/framework/tree/v1.7.8",
+                "source": "https://github.com/kodephp/framework/tree/v2.0.0",
                 "issues": "https://github.com/kodephp/framework/issues"
             },
-            "time": "2026-09-22T17:09:04+00:00"
+            "time": "2026-10-10T09:55:52+00:00"
         },
         {
             "name": "kode/http",
-            "version": "3.5.2",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/http.git",
-                "reference": "489d5eea36e2cabcf2305d9265a65b743861fa26"
+                "reference": "17295a0b40599520bd78fa287d716750614224fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/http/zipball/489d5eea36e2cabcf2305d9265a65b743861fa26",
-                "reference": "489d5eea36e2cabcf2305d9265a65b743861fa26",
+                "url": "https://api.github.com/repos/kodephp/http/zipball/17295a0b40599520bd78fa287d716750614224fe",
+                "reference": "17295a0b40599520bd78fa287d716750614224fe",
                 "shasum": ""
             },
             "require": {
-                "kode/context": "^3.2",
-                "kode/exception": "^3.0",
-                "php": "^8.3",
+                "kode/context": "^4",
+                "kode/exception": "^4",
+                "php": "^8.4",
                 "psr/http-factory": "^1.0",
                 "psr/http-message": "^1.0|^2.0",
                 "psr/http-server-handler": "^1.0",
@@ -1051,11 +1051,11 @@
             },
             "require-dev": {
                 "guzzlehttp/psr7": "^2.1",
-                "kode/facade": "^3.2",
-                "kode/fibers": "^4.10",
-                "kode/parallel": "^1.18",
-                "kode/process": "^5.2",
-                "kode/queue": "^2.2",
+                "kode/facade": "^4",
+                "kode/fibers": "^5",
+                "kode/parallel": "^2",
+                "kode/process": "^6",
+                "kode/queue": "^3",
                 "phpunit/phpunit": "^10.0|^11.0|^12.0",
                 "swoole/ide-helper": "^4.15|^5.0",
                 "symfony/var-dumper": "^6.0|^7.0"
@@ -1130,26 +1130,26 @@
                 "issues": "https://github.com/kodephp/http/issues",
                 "source": "https://github.com/kodephp/http"
             },
-            "time": "2026-09-22T12:41:22+00:00"
+            "time": "2026-10-10T09:16:52+00:00"
         },
         {
             "name": "kode/http-client",
-            "version": "2.6.0",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/http-client.git",
-                "reference": "7f286bc09def2366ee233e6859fc93c8367f32d5"
+                "reference": "33b1ec758b8cf958e7f34c5f435725573702d200"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/http-client/zipball/7f286bc09def2366ee233e6859fc93c8367f32d5",
-                "reference": "7f286bc09def2366ee233e6859fc93c8367f32d5",
+                "url": "https://api.github.com/repos/kodephp/http-client/zipball/33b1ec758b8cf958e7f34c5f435725573702d200",
+                "reference": "33b1ec758b8cf958e7f34c5f435725573702d200",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "kode/context": "^3.1",
-                "php": "^8.3",
+                "kode/context": "^4",
+                "php": "^8.4",
                 "psr/http-client": "^1.0",
                 "psr/http-factory": "^1.0",
                 "psr/http-message": "^2.0"
@@ -1213,26 +1213,26 @@
                 "issues": "https://github.com/kodephp/http-client/issues",
                 "source": "https://github.com/kodephp/http-client"
             },
-            "time": "2026-09-22T11:05:59+00:00"
+            "time": "2026-10-10T09:17:00+00:00"
         },
         {
             "name": "kode/jwt",
-            "version": "1.13.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/jwt.git",
-                "reference": "8e49661dcb51d35c663a9c50b19df59f8501a762"
+                "reference": "3fbbf37966a7e379f32371f5cabc75030a2a0260"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/jwt/zipball/8e49661dcb51d35c663a9c50b19df59f8501a762",
-                "reference": "8e49661dcb51d35c663a9c50b19df59f8501a762",
+                "url": "https://api.github.com/repos/kodephp/jwt/zipball/3fbbf37966a7e379f32371f5cabc75030a2a0260",
+                "reference": "3fbbf37966a7e379f32371f5cabc75030a2a0260",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-openssl": "*",
-                "php": "^8.3"
+                "php": "^8.4"
             },
             "require-dev": {
                 "mockery/mockery": "^1.6",
@@ -1299,26 +1299,26 @@
             ],
             "support": {
                 "issues": "https://github.com/kodephp/jwt/issues",
-                "source": "https://github.com/kodephp/jwt/tree/v1.13.0"
+                "source": "https://github.com/kodephp/jwt/tree/v2.0.0"
             },
-            "time": "2026-09-21T17:53:39+00:00"
+            "time": "2026-10-10T09:04:28+00:00"
         },
         {
             "name": "kode/limiting",
-            "version": "2.3.0",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/limiting.git",
-                "reference": "440380cead549ac22e38d897158cbe631660e5d7"
+                "reference": "c2af1c15bcf9784e8aaa5242fd71c2e699c7030d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/limiting/zipball/440380cead549ac22e38d897158cbe631660e5d7",
-                "reference": "440380cead549ac22e38d897158cbe631660e5d7",
+                "url": "https://api.github.com/repos/kodephp/limiting/zipball/c2af1c15bcf9784e8aaa5242fd71c2e699c7030d",
+                "reference": "c2af1c15bcf9784e8aaa5242fd71c2e699c7030d",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.3"
+                "php": "^8.4"
             },
             "require-dev": {
                 "phpstan/phpstan": "^1.12",
@@ -1346,7 +1346,7 @@
                     "email": "382601296@qq.com"
                 }
             ],
-            "description": "PHP 8.3+ 限流器，支持令牌桶、漏桶、滑动窗口、滑动窗口计数器、固定窗口计数器与多规则组合限流，内置内存/APCu/Redis/Memcached/PDO 存储与分布式并发控制",
+            "description": "PHP 8.4+ 限流器，支持令牌桶、漏桶、滑动窗口、滑动窗口计数器、固定窗口计数器与多规则组合限流，内置内存/APCu/Redis/Memcached/PDO 存储与分布式并发控制",
             "keywords": [
                 "concurrency",
                 "distributed",
@@ -1361,29 +1361,29 @@
             ],
             "support": {
                 "issues": "https://github.com/kodephp/limiting/issues",
-                "source": "https://github.com/kodephp/limiting/tree/v2.3.0"
+                "source": "https://github.com/kodephp/limiting/tree/v3.0.0"
             },
-            "time": "2026-09-21T08:38:05+00:00"
+            "time": "2026-10-10T09:04:34+00:00"
         },
         {
             "name": "kode/messaging",
-            "version": "v3.4.0",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/messaging.git",
-                "reference": "eff4bf50b0307ab40ed915e94ca3e1706453b0fb"
+                "reference": "8720a6a91a306357493222b4dd9355fbd55b2d85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/messaging/zipball/eff4bf50b0307ab40ed915e94ca3e1706453b0fb",
-                "reference": "eff4bf50b0307ab40ed915e94ca3e1706453b0fb",
+                "url": "https://api.github.com/repos/kodephp/messaging/zipball/8720a6a91a306357493222b4dd9355fbd55b2d85",
+                "reference": "8720a6a91a306357493222b4dd9355fbd55b2d85",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-mbstring": "*",
-                "kode/limiting": "^2.0",
-                "php": ">=8.3",
+                "kode/limiting": "^3",
+                "php": "^8.4",
                 "psr/log": "^2.0|^3.0"
             },
             "require-dev": {
@@ -1473,24 +1473,24 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-09-22T10:01:01+00:00"
+            "time": "2026-10-10T09:17:16+00:00"
         },
         {
             "name": "kode/middleware",
-            "version": "v1.3.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/middleware.git",
-                "reference": "41dee8581427f95553ee9585fd96f53064405b44"
+                "reference": "df0ac9e3ebb08f2e4fdfbf276214bb2602e1804b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/middleware/zipball/41dee8581427f95553ee9585fd96f53064405b44",
-                "reference": "41dee8581427f95553ee9585fd96f53064405b44",
+                "url": "https://api.github.com/repos/kodephp/middleware/zipball/df0ac9e3ebb08f2e4fdfbf276214bb2602e1804b",
+                "reference": "df0ac9e3ebb08f2e4fdfbf276214bb2602e1804b",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.3",
+                "php": "^8.4",
                 "psr/container": "^1.1 || ^2.0",
                 "psr/http-message": "^1.1 || ^2.0",
                 "psr/http-server-handler": "^1.0",
@@ -1553,27 +1553,27 @@
                 "issues": "https://github.com/kodephp/middleware/issues",
                 "source": "https://github.com/kodephp/middleware"
             },
-            "time": "2026-09-21T10:25:48+00:00"
+            "time": "2026-10-10T09:04:41+00:00"
         },
         {
             "name": "kode/parallel",
-            "version": "1.18.1",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/parallel.git",
-                "reference": "8b5f83686fe3ef226528e789238c1688f19add8c"
+                "reference": "0df4070c07c2e3ffe39a3d178364557d7ee5be44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/parallel/zipball/8b5f83686fe3ef226528e789238c1688f19add8c",
-                "reference": "8b5f83686fe3ef226528e789238c1688f19add8c",
+                "url": "https://api.github.com/repos/kodephp/parallel/zipball/0df4070c07c2e3ffe39a3d178364557d7ee5be44",
+                "reference": "0df4070c07c2e3ffe39a3d178364557d7ee5be44",
                 "shasum": ""
             },
             "require": {
-                "kode/context": "^3.0",
-                "kode/facade": "^3.0",
-                "kode/fibers": "^4.1",
-                "php": ">=8.3"
+                "kode/context": "^4",
+                "kode/facade": "^4",
+                "kode/fibers": "^5",
+                "php": "^8.4"
             },
             "require-dev": {
                 "phpunit/phpunit": "^10.0"
@@ -1611,7 +1611,7 @@
                     "homepage": "https://github.com/kodephp"
                 }
             ],
-            "description": "适用于 PHP 8.3+ 的高性能多线程并行并发库：基于 ext-parallel 真线程（ZTS）的主引擎 + 同步回退引擎，可通过 EngineFactory::register() 接入 kode/process 等多进程后端；提供 Runtime、Task、Future、Concurrency 同步原语（Lock/Atomic/Semaphore/Barrier/Channel）、Fiber、WorkerPool 等完整能力",
+            "description": "适用于 PHP 8.4+ 的高性能多线程并行并发库：基于 ext-parallel 真线程（ZTS）的主引擎 + 同步回退引擎，可通过 EngineFactory::register() 接入 kode/process 等多进程后端；提供 Runtime、Task、Future、Concurrency 同步原语（Lock/Atomic/Semaphore/Barrier/Channel）、Fiber、WorkerPool 等完整能力",
             "keywords": [
                 "async",
                 "concurrency",
@@ -1629,32 +1629,32 @@
             ],
             "support": {
                 "issues": "https://github.com/kodephp/parallel/issues",
-                "source": "https://github.com/kodephp/parallel/tree/v1.18.1"
+                "source": "https://github.com/kodephp/parallel/tree/v2.0.0"
             },
-            "time": "2026-09-22T10:22:29+00:00"
+            "time": "2026-10-10T09:51:49+00:00"
         },
         {
             "name": "kode/process",
-            "version": "5.3.1",
+            "version": "6.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/process.git",
-                "reference": "01105439eac309eb9452bdef58514c627c9248bd"
+                "reference": "0c5b94a71bc15ec987e0a5d99168b60cddcf3b26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/process/zipball/01105439eac309eb9452bdef58514c627c9248bd",
-                "reference": "01105439eac309eb9452bdef58514c627c9248bd",
+                "url": "https://api.github.com/repos/kodephp/process/zipball/0c5b94a71bc15ec987e0a5d99168b60cddcf3b26",
+                "reference": "0c5b94a71bc15ec987e0a5d99168b60cddcf3b26",
                 "shasum": ""
             },
             "require": {
                 "ext-pcntl": "*",
                 "ext-posix": "*",
                 "ext-sockets": "*",
-                "kode/context": "^3.1",
-                "kode/fibers": "^4.5",
-                "kode/queue": "^2.2",
-                "php": "^8.3",
+                "kode/context": "^4",
+                "kode/fibers": "^5",
+                "kode/queue": "^3",
+                "php": "^8.4",
                 "psr/http-message": "^1.0|^2.0",
                 "psr/log": "^2.0|^3.0",
                 "workerman/workerman": "^5.0"
@@ -1698,7 +1698,7 @@
                     "email": "382601296@qq.com"
                 }
             ],
-            "description": "PHP 8.3+ 进程编排内核：默认自研 Native 运行时（零扩展、master-worker 多进程），兼容 Swoole/Workerman，内置分布式集群能力（服务发现、分布式锁、Leader 选举、负载均衡、分布式 ID、限流、集群 RPC）",
+            "description": "PHP 8.4+ 进程编排内核：默认自研 Native 运行时（零扩展、master-worker 多进程），兼容 Swoole/Workerman，内置分布式集群能力（服务发现、分布式锁、Leader 选举、负载均衡、分布式 ID、限流、集群 RPC）",
             "keywords": [
                 "cluster",
                 "distributed",
@@ -1721,28 +1721,28 @@
             ],
             "support": {
                 "issues": "https://github.com/kodephp/process/issues",
-                "source": "https://github.com/kodephp/process/tree/v5.3.1"
+                "source": "https://github.com/kodephp/process/tree/v6.0.0"
             },
-            "time": "2026-09-22T01:45:30+00:00"
+            "time": "2026-10-10T09:51:58+00:00"
         },
         {
             "name": "kode/queue",
-            "version": "2.3.1",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/queue.git",
-                "reference": "521e48e24a2e68569158c668ef751f18d6e581de"
+                "reference": "6d724c19c02032b70f3329bbaabe6f771d2b6dd2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/queue/zipball/521e48e24a2e68569158c668ef751f18d6e581de",
-                "reference": "521e48e24a2e68569158c668ef751f18d6e581de",
+                "url": "https://api.github.com/repos/kodephp/queue/zipball/6d724c19c02032b70f3329bbaabe6f771d2b6dd2",
+                "reference": "6d724c19c02032b70f3329bbaabe6f771d2b6dd2",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-mbstring": "*",
-                "php": "^8.3",
+                "php": "^8.4",
                 "psr/container": "^1.1 || ^2.0",
                 "psr/log": "^2.0 || ^3.0",
                 "psr/simple-cache": "^2.0 || ^3.0"
@@ -1786,7 +1786,7 @@
                     "homepage": "https://kodephp.com"
                 }
             ],
-            "description": "现代化 PHP 8.3+ 队列组件：不可变消息对象、可见性超时与至少一次投递、内建 Worker 与死信存储，支持 Redis / 数据库 / Beanstalkd / AMQP / Kafka 等多种后端",
+            "description": "现代化 PHP 8.4+ 队列组件：不可变消息对象、可见性超时与至少一次投递、内建 Worker 与死信存储，支持 Redis / 数据库 / Beanstalkd / AMQP / Kafka 等多种后端",
             "homepage": "https://github.com/kodephp/queue",
             "keywords": [
                 "AMQP",
@@ -1811,25 +1811,25 @@
                 "issues": "https://github.com/kodephp/queue/issues",
                 "source": "https://github.com/kodephp/queue"
             },
-            "time": "2026-09-22T01:48:30+00:00"
+            "time": "2026-10-10T09:16:30+00:00"
         },
         {
             "name": "kode/router",
-            "version": "v2.2.0",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/router.git",
-                "reference": "e81702526a36f04973049ecb38d8200b30a3e1d4"
+                "reference": "a1f82431f6a6d975ac193df2bc5072fa119ad899"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/router/zipball/e81702526a36f04973049ecb38d8200b30a3e1d4",
-                "reference": "e81702526a36f04973049ecb38d8200b30a3e1d4",
+                "url": "https://api.github.com/repos/kodephp/router/zipball/a1f82431f6a6d975ac193df2bc5072fa119ad899",
+                "reference": "a1f82431f6a6d975ac193df2bc5072fa119ad899",
                 "shasum": ""
             },
             "require": {
                 "nikic/fast-route": "^1.3",
-                "php": "^8.3"
+                "php": "^8.4"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^3.0",
@@ -1894,26 +1894,26 @@
                 "issues": "https://github.com/kodephp/router/issues",
                 "source": "https://github.com/kodephp/router"
             },
-            "time": "2026-09-21T18:02:52+00:00"
+            "time": "2026-10-10T09:04:48+00:00"
         },
         {
             "name": "kode/runtime",
-            "version": "3.4.0",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/runtime.git",
-                "reference": "193841d172393c798ee29a0e35ee5585df1f9f07"
+                "reference": "a809a73a55fbe3a8800cb5035b81e424d401f835"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/runtime/zipball/193841d172393c798ee29a0e35ee5585df1f9f07",
-                "reference": "193841d172393c798ee29a0e35ee5585df1f9f07",
+                "url": "https://api.github.com/repos/kodephp/runtime/zipball/a809a73a55fbe3a8800cb5035b81e424d401f835",
+                "reference": "a809a73a55fbe3a8800cb5035b81e424d401f835",
                 "shasum": ""
             },
             "require": {
-                "kode/console": "^4.0",
-                "kode/context": "^3.0",
-                "php": "^8.3"
+                "kode/console": "^5",
+                "kode/context": "^4",
+                "php": "^8.4"
             },
             "require-dev": {
                 "phpunit/phpunit": "^12.0",
@@ -1949,7 +1949,7 @@
                     "email": "382601296@qq.com"
                 }
             ],
-            "description": "现代 PHP 常驻内存应用的统一运行时抽象层 | 支持 Swoole、Swow、PHP Fiber、多进程、多线程、Console 及传统 CLI 模式，基于 PHP 8.3+ 新特性构建",
+            "description": "现代 PHP 常驻内存应用的统一运行时抽象层 | 支持 Swoole、Swow、PHP Fiber、多进程、多线程、Console 及传统 CLI 模式，基于 PHP 8.4+ 新特性构建",
             "keywords": [
                 "async",
                 "console",
@@ -1963,26 +1963,26 @@
             ],
             "support": {
                 "issues": "https://github.com/kodephp/runtime/issues",
-                "source": "https://github.com/kodephp/runtime/tree/v3.4.0"
+                "source": "https://github.com/kodephp/runtime/tree/v4.0.0"
             },
-            "time": "2026-08-10T10:06:38+00:00"
+            "time": "2026-10-10T09:16:16+00:00"
         },
         {
             "name": "kode/scheduling",
-            "version": "v1.4.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/scheduling.git",
-                "reference": "eb5023adf9d3a24af77173007c41b19c3f1b9d9d"
+                "reference": "cb24555113b20091af5efa620ed99b7c0e1e20da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/scheduling/zipball/eb5023adf9d3a24af77173007c41b19c3f1b9d9d",
-                "reference": "eb5023adf9d3a24af77173007c41b19c3f1b9d9d",
+                "url": "https://api.github.com/repos/kodephp/scheduling/zipball/cb24555113b20091af5efa620ed99b7c0e1e20da",
+                "reference": "cb24555113b20091af5efa620ed99b7c0e1e20da",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.3"
+                "php": "^8.4"
             },
             "require-dev": {
                 "phpunit/phpunit": "^11.0"
@@ -2016,29 +2016,29 @@
             ],
             "support": {
                 "issues": "https://github.com/kodephp/scheduling/issues",
-                "source": "https://github.com/kodephp/scheduling/tree/v1.4.0"
+                "source": "https://github.com/kodephp/scheduling/tree/v2.0.0"
             },
-            "time": "2026-09-21T09:38:04+00:00"
+            "time": "2026-10-10T09:04:55+00:00"
         },
         {
             "name": "kode/session",
-            "version": "v3.3.0",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/session.git",
-                "reference": "ef9493b6092d09b7816edfbd0588ab44a383ffd5"
+                "reference": "cbe2f8b77feee1a48a15d37248b84c4d3865c62c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/session/zipball/ef9493b6092d09b7816edfbd0588ab44a383ffd5",
-                "reference": "ef9493b6092d09b7816edfbd0588ab44a383ffd5",
+                "url": "https://api.github.com/repos/kodephp/session/zipball/cbe2f8b77feee1a48a15d37248b84c4d3865c62c",
+                "reference": "cbe2f8b77feee1a48a15d37248b84c4d3865c62c",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-zlib": "*",
-                "kode/context": "^3.1",
-                "php": ">=8.3",
+                "kode/context": "^4",
+                "php": "^8.4",
                 "psr/http-message": "^1.0|^2.0",
                 "psr/http-server-handler": "^1.0",
                 "psr/http-server-middleware": "^1.0"
@@ -2085,22 +2085,22 @@
             ],
             "support": {
                 "issues": "https://github.com/kodephp/session/issues",
-                "source": "https://github.com/kodephp/session/tree/v3.3.0"
+                "source": "https://github.com/kodephp/session/tree/v4.0.0"
             },
-            "time": "2026-09-21T08:38:20+00:00"
+            "time": "2026-10-10T09:16:23+00:00"
         },
         {
             "name": "monolog/monolog",
-            "version": "3.12.0",
+            "version": "3.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "72c534fc0ab181ef52d92a68382318631e301608"
+                "reference": "d7059e4c691d05ea1222b5124bed0f961be46e15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/72c534fc0ab181ef52d92a68382318631e301608",
-                "reference": "72c534fc0ab181ef52d92a68382318631e301608",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/d7059e4c691d05ea1222b5124bed0f961be46e15",
+                "reference": "d7059e4c691d05ea1222b5124bed0f961be46e15",
                 "shasum": ""
             },
             "require": {
@@ -2180,7 +2180,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
-                "source": "https://github.com/Seldaek/monolog/tree/3.12.0"
+                "source": "https://github.com/Seldaek/monolog/tree/3.12.1"
             },
             "funding": [
                 {
@@ -2192,7 +2192,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-09-09T08:34:20+00:00"
+            "time": "2026-09-29T19:21:12+00:00"
         },
         {
             "name": "nikic/fast-route",
@@ -2999,16 +2999,16 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.38.2",
+            "version": "v1.43.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "d3d318bad5e7a1bfbd026009c8bfb8d8f99ae6b6"
+                "reference": "4d5d331bf731e0aedbc6b2f5e61135b7b7996a72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/d3d318bad5e7a1bfbd026009c8bfb8d8f99ae6b6",
-                "reference": "d3d318bad5e7a1bfbd026009c8bfb8d8f99ae6b6",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/4d5d331bf731e0aedbc6b2f5e61135b7b7996a72",
+                "reference": "4d5d331bf731e0aedbc6b2f5e61135b7b7996a72",
                 "shasum": ""
             },
             "require": {
@@ -3060,7 +3060,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.38.2"
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.43.0"
             },
             "funding": [
                 {
@@ -3080,20 +3080,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-27T06:59:30+00:00"
+            "time": "2026-09-24T15:19:04+00:00"
         },
         {
             "name": "symfony/polyfill-php80",
-            "version": "v1.37.0",
+            "version": "v1.43.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php80.git",
-                "reference": "dfb55726c3a76ea3b6459fcfda1ec2d80a682411"
+                "reference": "9c6a5d6b01ca51d486c813e9a9c0ed55f208bb74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/dfb55726c3a76ea3b6459fcfda1ec2d80a682411",
-                "reference": "dfb55726c3a76ea3b6459fcfda1ec2d80a682411",
+                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/9c6a5d6b01ca51d486c813e9a9c0ed55f208bb74",
+                "reference": "9c6a5d6b01ca51d486c813e9a9c0ed55f208bb74",
                 "shasum": ""
             },
             "require": {
@@ -3144,7 +3144,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.37.0"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.43.0"
             },
             "funding": [
                 {
@@ -3164,20 +3164,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-04-10T16:19:22+00:00"
+            "time": "2026-09-25T15:50:05+00:00"
         },
         {
             "name": "symfony/polyfill-php83",
-            "version": "v1.41.0",
+            "version": "v1.43.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php83.git",
-                "reference": "5ea99087fb99c273a9b9236ed4c31e78b16103c6"
+                "reference": "80ccff923a8d61f73ebe9da0aa94e25232f004ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php83/zipball/5ea99087fb99c273a9b9236ed4c31e78b16103c6",
-                "reference": "5ea99087fb99c273a9b9236ed4c31e78b16103c6",
+                "url": "https://api.github.com/repos/symfony/polyfill-php83/zipball/80ccff923a8d61f73ebe9da0aa94e25232f004ce",
+                "reference": "80ccff923a8d61f73ebe9da0aa94e25232f004ce",
                 "shasum": ""
             },
             "require": {
@@ -3224,7 +3224,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php83/tree/v1.41.0"
+                "source": "https://github.com/symfony/polyfill-php83/tree/v1.43.0"
             },
             "funding": [
                 {
@@ -3244,7 +3244,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-01T12:47:55+00:00"
+            "time": "2026-09-25T15:50:05+00:00"
         },
         {
             "name": "symfony/translation",
@@ -3430,16 +3430,16 @@
         },
         {
             "name": "symfony/validator",
-            "version": "v7.4.19",
+            "version": "v7.4.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/validator.git",
-                "reference": "a6d275d96d107fb2000dae04ab23b2e0c29ceb66"
+                "reference": "75a30e116016554477f662e106fd8e337f0c4dac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/validator/zipball/a6d275d96d107fb2000dae04ab23b2e0c29ceb66",
-                "reference": "a6d275d96d107fb2000dae04ab23b2e0c29ceb66",
+                "url": "https://api.github.com/repos/symfony/validator/zipball/75a30e116016554477f662e106fd8e337f0c4dac",
+                "reference": "75a30e116016554477f662e106fd8e337f0c4dac",
                 "shasum": ""
             },
             "require": {
@@ -3510,7 +3510,7 @@
             "description": "Provides tools to validate values",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/validator/tree/v7.4.19"
+                "source": "https://github.com/symfony/validator/tree/v7.4.20"
             },
             "funding": [
                 {
@@ -3530,7 +3530,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-09-09T19:50:33+00:00"
+            "time": "2026-09-29T12:35:16+00:00"
         },
         {
             "name": "workerman/coroutine",
@@ -3574,16 +3574,16 @@
         },
         {
             "name": "workerman/workerman",
-            "version": "v5.2.2",
+            "version": "v5.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/walkor/workerman.git",
-                "reference": "a0866601af066c0eab5a2f7b9aef8bdda8fa1911"
+                "reference": "8fd5c148ff7dcd7bbc88621e1712eeb1f66b7f56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/walkor/workerman/zipball/a0866601af066c0eab5a2f7b9aef8bdda8fa1911",
-                "reference": "a0866601af066c0eab5a2f7b9aef8bdda8fa1911",
+                "url": "https://api.github.com/repos/walkor/workerman/zipball/8fd5c148ff7dcd7bbc88621e1712eeb1f66b7f56",
+                "reference": "8fd5c148ff7dcd7bbc88621e1712eeb1f66b7f56",
                 "shasum": ""
             },
             "require": {
@@ -3646,7 +3646,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2026-06-04T07:31:34+00:00"
+            "time": "2026-10-09T01:12:31+00:00"
         }
     ],
     "packages-dev": [
@@ -4234,16 +4234,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "11.5.56",
+            "version": "11.5.57",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "5f83edffa6967c3db468d48a695ec7bcb02e9256"
+                "reference": "36b75bf56a8535623f5b3e24b27ea1823759da1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/5f83edffa6967c3db468d48a695ec7bcb02e9256",
-                "reference": "5f83edffa6967c3db468d48a695ec7bcb02e9256",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/36b75bf56a8535623f5b3e24b27ea1823759da1a",
+                "reference": "36b75bf56a8535623f5b3e24b27ea1823759da1a",
                 "shasum": ""
             },
             "require": {
@@ -4253,7 +4253,7 @@
                 "ext-libxml": "*",
                 "ext-mbstring": "*",
                 "ext-xmlwriter": "*",
-                "myclabs/deep-copy": "^1.13.4",
+                "myclabs/deep-copy": "^1.14.0",
                 "phar-io/manifest": "^2.0.4",
                 "phar-io/version": "^3.2.1",
                 "php": ">=8.2",
@@ -4316,7 +4316,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.56"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.57"
             },
             "funding": [
                 {
@@ -4324,7 +4324,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2026-07-06T14:52:39+00:00"
+            "time": "2026-10-05T05:47:54+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -5421,7 +5421,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=8.3"
+        "php": "^8.4"
     },
     "platform-dev": {},
     "plugin-api-version": "2.9.0"

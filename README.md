@@ -1,6 +1,6 @@
 # Kode Framework
 
-一个以 [kode](https://github.com/kodephp) 生态组件为基座、组合 Monolog / Symfony Validator 等成熟包的**现代化 PHP API 框架**。最低 PHP 8.3+，开箱即多进程常驻服务，错误默认返回可追踪的结构化 JSON。
+一个以 [kode](https://github.com/kodephp) 生态组件为基座、组合 Monolog / Symfony Validator 等成熟包的**现代化 PHP API 框架**。最低 PHP 8.4+，开箱即多进程常驻服务，错误默认返回可追踪的结构化 JSON。
 
 > 设计立场和 webman / Hyperf 一致：**薄内核 + 复用 Composer 生态**。框架只做「启动、容器、路由、统一响应、异常、中间件、韧性层」等地基，其余能力（JWT、限流、缓存、队列、数据库、事件、HTTP 客户端、消息、国际化、Snowflake、定时任务、多进程……）全部来自 kode 生态包，业务代码不变即可切换运行时（Fiber 协程 / 多进程 / 多线程 / Swoole / 分布式）。
 
@@ -183,7 +183,7 @@ pid      memory    listening                      worker_name    connections  to
 
 | 项目 | 值 |
 | --- | --- |
-| 骨架版本 | **v1.3.12**（`composer.json` 的 `version`、`config/app.php` 的 `app.version`、git tag 三者同步） |
+| 骨架版本 | **v2.0.0**（`composer.json` 的 `version`、`config/app.php` 的 `app.version`、git tag 三者同步） |
 | 包名 | `kode/skeleton`（`type: project`，用于 `composer create-project`） |
 | 仓库 | <https://github.com/kodephp/skeleton> |
 | 依赖内核 | `kode/framework` `^1.7.8` |
