@@ -20,7 +20,7 @@ php kode start
 
 # 3. 验证
 curl http://127.0.0.1:9527/health
-# {"status":"ok","service":"kode-app","version":"1.3.2","php":"8.3.33","env":"local","time":"..."}
+# {"status":"ok","service":"kode-app","version":"2.0.0","php":"8.4.26","env":"local","time":"..."}
 ```
 
 > **为什么多了 `--repository`**：`kode/skeleton` 与 `kode/framework` 目前都**未提交到 Packagist**，
@@ -77,7 +77,7 @@ curl "http://127.0.0.1:9527/hello?name=Kode"   # {"hello":"Kode"}
 ```text
 Kode[kode] start in PRODUCTION mode
 --- KODE ---------------------------------------------------------------------
-Kode Framework version:1.7.8          PHP version:8.3.33
+Kode Framework version:2.0.0          PHP version:8.4.26
 Runtime:native                   Event-Loop:event
 --- WORKERS ------------------------------------------------------------------
 proto    user       worker           listen                       processes  status
@@ -101,7 +101,7 @@ Press Ctrl+C to stop. Start success.
 > worker。注意这与 workerman 的命名相反（那边 restart 是全量、reload 是平滑），
 > 为统一记忆：**带 e 的 reload 做“全套”（rEload＝Everything），短小的 restart 做“滚动”（rolling）**。
 
-> **容器化**（v1.3.9 起）：根目录 `Dockerfile` 两阶段构建（`composer install --no-dev` → `php:8.3-cli`），
+> **容器化**（v1.3.9 起）：根目录 `Dockerfile` 两阶段构建（`composer install --no-dev` → `php:8.4-cli`），
 > 入口是 `php kode start`（**不是** `bin/kode`，那目录 v1.2.0 就没了），`CMD` 显式 `--host 0.0.0.0`，
 > 并 `docker-php-ext-install pdo_pgsql`——默认连接是 pgsql，官方 cli 镜像不自带该驱动，缺了容器一连库就崩。
 > 配套的 `.dockerignore` 同样关键：排除 `.env`（密钥烘进镜像层＝公开密钥）与宿主 `vendor/`

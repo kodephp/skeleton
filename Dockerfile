@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1.6
 # Kode Framework — 生产级多阶段构建（12-factor）
 # 1) 依赖阶段：composer install --no-dev --optimize-autoloader
-# 2) 运行阶段：php:8.3-cli + 非 root 用户 + opcache 预热 + 健康探针
+# 2) 运行阶段：php:8.4-cli + 非 root 用户 + opcache 预热 + 健康探针
 
 FROM composer:2 AS vendor
 WORKDIR /app
@@ -11,10 +11,10 @@ RUN --mount=type=cache,target=/tmp/cache \
     composer install --no-dev --optimize-autoloader --no-interaction --no-progress --prefer-dist \
     || composer update --no-dev --optimize-autoloader --no-interaction --no-progress --prefer-dist
 
-FROM php:8.3-cli
+FROM php:8.4-cli
 # 系统依赖：pcntl/posix 已内置于 cli 镜像；zip 供 ext-zip。
 # pdo_pgsql 必装：config/database.php 的默认连接就是 pgsql，缺驱动会在首个 DB 调用时
-# 抛 "could not find driver"（官方 php:8.3-cli 不自带它，需 libpq-dev 现编）。
+# 抛 "could not find driver"（官方 php:8.4-cli 不自带它，需 libpq-dev 现编）。
 # 换 DB_CONNECTION=mysql 时把 pdo_pgsql 换成 pdo_mysql，别两个都塞进镜像。
 RUN apt-get update && apt-get install -y --no-install-recommends libzip-dev libpq-dev libicu-dev \
     && docker-php-ext-install zip opcache pdo_pgsql \
