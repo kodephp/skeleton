@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8f0c029d12c9803218af18a0af2df3ef",
+    "content-hash": "391c793f05113b5f7f61344ffe7bdc1a",
     "packages": [
         {
             "name": "guzzlehttp/psr7",
@@ -903,7 +903,7 @@
             "version": "2.1.3",
             "source": {
                 "type": "git",
-                "url": "git@github.com:kodephp/framework.git",
+                "url": "https://github.com/kodephp/framework.git",
                 "reference": "000e07874fea2bc460db9fddb176386cfc4b1904"
             },
             "dist": {
