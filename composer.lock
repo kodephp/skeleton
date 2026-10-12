@@ -539,16 +539,16 @@
         },
         {
             "name": "kode/database",
-            "version": "2.0.3",
+            "version": "2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/database.git",
-                "reference": "bacd852fcbe24a915b0a844cbf7c189fc9666917"
+                "reference": "5d342505137e8caec4c6566626cecb8325c2ada7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/database/zipball/bacd852fcbe24a915b0a844cbf7c189fc9666917",
-                "reference": "bacd852fcbe24a915b0a844cbf7c189fc9666917",
+                "url": "https://api.github.com/repos/kodephp/database/zipball/5d342505137e8caec4c6566626cecb8325c2ada7",
+                "reference": "5d342505137e8caec4c6566626cecb8325c2ada7",
                 "shasum": ""
             },
             "require": {
@@ -610,7 +610,7 @@
                 "issues": "https://github.com/kodephp/database/issues",
                 "source": "https://github.com/kodephp/database"
             },
-            "time": "2026-10-12T01:41:33+00:00"
+            "time": "2026-10-12T08:46:41+00:00"
         },
         {
             "name": "kode/di",
@@ -909,7 +909,7 @@
             "version": "2.1.5",
             "source": {
                 "type": "git",
-                "url": "git@github.com:kodephp/framework.git",
+                "url": "https://github.com/kodephp/framework.git",
                 "reference": "0d5fa0963d39283cf3c91469cbe35e50cd10f795"
             },
             "dist": {
@@ -1368,16 +1368,16 @@
         },
         {
             "name": "kode/messaging",
-            "version": "5.0.3",
+            "version": "5.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/messaging.git",
-                "reference": "ca6e378700eecf82b581802768f0312a943ed6d4"
+                "reference": "8a8c5d1ecaf65bbc9b653f72ed3f0bfc2ef547ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/messaging/zipball/ca6e378700eecf82b581802768f0312a943ed6d4",
-                "reference": "ca6e378700eecf82b581802768f0312a943ed6d4",
+                "url": "https://api.github.com/repos/kodephp/messaging/zipball/8a8c5d1ecaf65bbc9b653f72ed3f0bfc2ef547ac",
+                "reference": "8a8c5d1ecaf65bbc9b653f72ed3f0bfc2ef547ac",
                 "shasum": ""
             },
             "require": {
@@ -1474,7 +1474,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-10-12T01:42:16+00:00"
+            "time": "2026-10-12T08:46:40+00:00"
         },
         {
             "name": "kode/middleware",
@@ -1732,16 +1732,16 @@
         },
         {
             "name": "kode/queue",
-            "version": "3.0.6",
+            "version": "3.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/queue.git",
-                "reference": "80b3ebbf29df98e4ba436492681f51497830fefc"
+                "reference": "f16908b8e71f3327387178e7ca41ed4a2a48ab50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/queue/zipball/80b3ebbf29df98e4ba436492681f51497830fefc",
-                "reference": "80b3ebbf29df98e4ba436492681f51497830fefc",
+                "url": "https://api.github.com/repos/kodephp/queue/zipball/f16908b8e71f3327387178e7ca41ed4a2a48ab50",
+                "reference": "f16908b8e71f3327387178e7ca41ed4a2a48ab50",
                 "shasum": ""
             },
             "require": {
@@ -1816,7 +1816,7 @@
                 "issues": "https://github.com/kodephp/queue/issues",
                 "source": "https://github.com/kodephp/queue"
             },
-            "time": "2026-10-12T01:42:03+00:00"
+            "time": "2026-10-12T08:46:57+00:00"
         },
         {
             "name": "kode/router",
