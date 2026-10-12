@@ -30,7 +30,7 @@ return function (App $app): void {
 
     // 受 JWT 保护的接口
     $app->get('/me', fn($req) => resolve(\app\http\controllers\UserController::class)->me($req))
-        ->middleware(new AuthMiddleware());
+        ->middleware(new AuthMiddleware);
 
     // 登录签发 JWT
     $app->post('/auth/login', fn($req) => resolve(\app\http\controllers\AuthController::class)->login($req));

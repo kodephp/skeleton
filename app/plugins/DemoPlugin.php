@@ -31,7 +31,7 @@ final class DemoPlugin implements PluginInterface
         ]);
 
         // 绑定一个服务到容器
-        $manager->bind('demo.service', static fn(): DemoService => new DemoService());
+        $manager->bind('demo.service', static fn(): DemoService => new DemoService);
     }
 
     public function boot(PluginManager $manager): void
