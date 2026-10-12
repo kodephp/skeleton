@@ -257,16 +257,16 @@
         },
         {
             "name": "kode/cache",
-            "version": "2.0.4",
+            "version": "2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/cache.git",
-                "reference": "6ef78696eccbfe2bb8002cc490376089e1878b15"
+                "reference": "ea03fbedbb29c0b1d14386bde651898ff7490273"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/cache/zipball/6ef78696eccbfe2bb8002cc490376089e1878b15",
-                "reference": "6ef78696eccbfe2bb8002cc490376089e1878b15",
+                "url": "https://api.github.com/repos/kodephp/cache/zipball/ea03fbedbb29c0b1d14386bde651898ff7490273",
+                "reference": "ea03fbedbb29c0b1d14386bde651898ff7490273",
                 "shasum": ""
             },
             "require": {
@@ -324,7 +324,7 @@
                 "issues": "https://github.com/kodephp/cache/issues",
                 "source": "https://github.com/kodephp/cache"
             },
-            "time": "2026-10-12T01:41:27+00:00"
+            "time": "2026-10-12T07:32:06+00:00"
         },
         {
             "name": "kode/console",
@@ -1033,16 +1033,16 @@
         },
         {
             "name": "kode/http",
-            "version": "4.0.5",
+            "version": "4.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/http.git",
-                "reference": "49f57648226aac4597b0e872512e9ef0fe10c9ca"
+                "reference": "a7794cb8395105b9199853647bd84cee806bd95e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/http/zipball/49f57648226aac4597b0e872512e9ef0fe10c9ca",
-                "reference": "49f57648226aac4597b0e872512e9ef0fe10c9ca",
+                "url": "https://api.github.com/repos/kodephp/http/zipball/a7794cb8395105b9199853647bd84cee806bd95e",
+                "reference": "a7794cb8395105b9199853647bd84cee806bd95e",
                 "shasum": ""
             },
             "require": {
@@ -1132,7 +1132,7 @@
                 "issues": "https://github.com/kodephp/http/issues",
                 "source": "https://github.com/kodephp/http"
             },
-            "time": "2026-10-12T01:41:48+00:00"
+            "time": "2026-10-12T07:32:05+00:00"
         },
         {
             "name": "kode/http-client",
@@ -1560,16 +1560,16 @@
         },
         {
             "name": "kode/parallel",
-            "version": "2.0.6",
+            "version": "2.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/parallel.git",
-                "reference": "95df5f3e4778969b30c11b43cba8a54780729355"
+                "reference": "3695adb0bfadb036dca558afc517944f9c7b8f1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/parallel/zipball/95df5f3e4778969b30c11b43cba8a54780729355",
-                "reference": "95df5f3e4778969b30c11b43cba8a54780729355",
+                "url": "https://api.github.com/repos/kodephp/parallel/zipball/3695adb0bfadb036dca558afc517944f9c7b8f1f",
+                "reference": "3695adb0bfadb036dca558afc517944f9c7b8f1f",
                 "shasum": ""
             },
             "require": {
@@ -1635,20 +1635,20 @@
                 "issues": "https://github.com/kodephp/parallel/issues",
                 "source": "https://github.com/kodephp/parallel"
             },
-            "time": "2026-10-12T01:41:56+00:00"
+            "time": "2026-10-12T07:32:30+00:00"
         },
         {
             "name": "kode/process",
-            "version": "7.0.6",
+            "version": "7.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/process.git",
-                "reference": "d1dbade2210d7a88c3fe6b19f261e7ddfca208a9"
+                "reference": "a0b3669338e09990c466ebe01aa046da9313f249"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/process/zipball/d1dbade2210d7a88c3fe6b19f261e7ddfca208a9",
-                "reference": "d1dbade2210d7a88c3fe6b19f261e7ddfca208a9",
+                "url": "https://api.github.com/repos/kodephp/process/zipball/a0b3669338e09990c466ebe01aa046da9313f249",
+                "reference": "a0b3669338e09990c466ebe01aa046da9313f249",
                 "shasum": ""
             },
             "require": {
@@ -1728,7 +1728,7 @@
                 "issues": "https://github.com/kodephp/process/issues",
                 "source": "https://github.com/kodephp/process"
             },
-            "time": "2026-10-12T01:42:01+00:00"
+            "time": "2026-10-12T07:32:29+00:00"
         },
         {
             "name": "kode/queue",
