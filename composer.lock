@@ -1033,16 +1033,16 @@
         },
         {
             "name": "kode/http",
-            "version": "4.0.6",
+            "version": "4.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/http.git",
-                "reference": "a7794cb8395105b9199853647bd84cee806bd95e"
+                "reference": "9f153867da41e2212049c7c9181f5e7d1f353995"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/http/zipball/a7794cb8395105b9199853647bd84cee806bd95e",
-                "reference": "a7794cb8395105b9199853647bd84cee806bd95e",
+                "url": "https://api.github.com/repos/kodephp/http/zipball/9f153867da41e2212049c7c9181f5e7d1f353995",
+                "reference": "9f153867da41e2212049c7c9181f5e7d1f353995",
                 "shasum": ""
             },
             "require": {
@@ -1132,7 +1132,7 @@
                 "issues": "https://github.com/kodephp/http/issues",
                 "source": "https://github.com/kodephp/http"
             },
-            "time": "2026-10-12T07:32:05+00:00"
+            "time": "2026-10-12T07:45:52+00:00"
         },
         {
             "name": "kode/http-client",
