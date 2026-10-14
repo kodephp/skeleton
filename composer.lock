@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "962b32f6c608370a55538e3275b305ac",
+    "content-hash": "8def7547930ac85f0df14e355bbab2a0",
     "packages": [
         {
             "name": "guzzlehttp/psr7",
@@ -906,16 +906,16 @@
         },
         {
             "name": "kode/framework",
-            "version": "3.1.2",
+            "version": "3.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/framework.git",
-                "reference": "1485541fac64b50dc08059839a172c3d39db7bce"
+                "reference": "9c059cd288f1b8f3e03cec61221d024f23aa8ea1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/framework/zipball/1485541fac64b50dc08059839a172c3d39db7bce",
-                "reference": "1485541fac64b50dc08059839a172c3d39db7bce",
+                "url": "https://api.github.com/repos/kodephp/framework/zipball/9c059cd288f1b8f3e03cec61221d024f23aa8ea1",
+                "reference": "9c059cd288f1b8f3e03cec61221d024f23aa8ea1",
                 "shasum": ""
             },
             "require": {
@@ -1029,7 +1029,7 @@
                 "issues": "https://github.com/kodephp/framework/issues",
                 "source": "https://github.com/kodephp/framework"
             },
-            "time": "2026-10-14T13:10:08+00:00"
+            "time": "2026-10-14T13:36:39+00:00"
         },
         {
             "name": "kode/http",
