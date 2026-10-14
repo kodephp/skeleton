@@ -9,7 +9,7 @@
         "webman"
     ],
     "license": "MIT",
-    "version": "2.0.2",
+    "version": "3.0.0",
     "repositories": [
         {
             "type": "vcs",
@@ -18,7 +18,7 @@
     ],
     "require": {
         "php": "^8.4",
-        "kode/framework": "^2",
+        "kode/framework": "^3",
         "monolog/monolog": "^3.0",
         "nyholm/psr7": "^1.8",
         "symfony/translation": "^7.0",
