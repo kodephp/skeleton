@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0616634c8dab721fe907f1451cbb63cf",
+    "content-hash": "8c6599b1bfa1f2f144349d136057e594",
     "packages": [
         {
             "name": "guzzlehttp/psr7",
@@ -391,16 +391,16 @@
         },
         {
             "name": "kode/context",
-            "version": "4.0.3",
+            "version": "4.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/context.git",
-                "reference": "2edb44513af6bcd9e14ff6741c92284f26c08c66"
+                "reference": "9cca58691e346f51735f0f4d18c6c270afebf801"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/context/zipball/2edb44513af6bcd9e14ff6741c92284f26c08c66",
-                "reference": "2edb44513af6bcd9e14ff6741c92284f26c08c66",
+                "url": "https://api.github.com/repos/kodephp/context/zipball/9cca58691e346f51735f0f4d18c6c270afebf801",
+                "reference": "9cca58691e346f51735f0f4d18c6c270afebf801",
                 "shasum": ""
             },
             "require": {
@@ -461,7 +461,7 @@
                 "issues": "https://github.com/kodephp/context/issues",
                 "source": "https://github.com/kodephp/context"
             },
-            "time": "2026-10-14T03:54:28+00:00"
+            "time": "2026-10-15T03:23:56+00:00"
         },
         {
             "name": "kode/core",
@@ -539,16 +539,16 @@
         },
         {
             "name": "kode/database",
-            "version": "2.0.5",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/database.git",
-                "reference": "2da49a7eb5a8541afa10254ddc3b9c89996eb2b2"
+                "reference": "e8c849b2a418761a4662732c2262971b7bc41924"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/database/zipball/2da49a7eb5a8541afa10254ddc3b9c89996eb2b2",
-                "reference": "2da49a7eb5a8541afa10254ddc3b9c89996eb2b2",
+                "url": "https://api.github.com/repos/kodephp/database/zipball/e8c849b2a418761a4662732c2262971b7bc41924",
+                "reference": "e8c849b2a418761a4662732c2262971b7bc41924",
                 "shasum": ""
             },
             "require": {
@@ -610,7 +610,7 @@
                 "issues": "https://github.com/kodephp/database/issues",
                 "source": "https://github.com/kodephp/database"
             },
-            "time": "2026-10-14T13:08:48+00:00"
+            "time": "2026-10-15T06:05:57+00:00"
         },
         {
             "name": "kode/di",
@@ -906,16 +906,16 @@
         },
         {
             "name": "kode/framework",
-            "version": "3.1.4",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/framework.git",
-                "reference": "f6fa0c4b301a0aa2485b23f6e210b41424415dae"
+                "reference": "f8cd0d8128dc7115518e3af25247ea690a4940ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/framework/zipball/f6fa0c4b301a0aa2485b23f6e210b41424415dae",
-                "reference": "f6fa0c4b301a0aa2485b23f6e210b41424415dae",
+                "url": "https://api.github.com/repos/kodephp/framework/zipball/f8cd0d8128dc7115518e3af25247ea690a4940ff",
+                "reference": "f8cd0d8128dc7115518e3af25247ea690a4940ff",
                 "shasum": ""
             },
             "require": {
@@ -1029,20 +1029,20 @@
                 "issues": "https://github.com/kodephp/framework/issues",
                 "source": "https://github.com/kodephp/framework"
             },
-            "time": "2026-10-14T15:36:34+00:00"
+            "time": "2026-10-15T08:18:59+00:00"
         },
         {
             "name": "kode/http",
-            "version": "4.0.9",
+            "version": "4.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/http.git",
-                "reference": "1dfcd50112eb8f0215d0048c7c48898c1b1ae3ea"
+                "reference": "3cc59dc2b2f2df2c982f6e59605251ce46f1fe5a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/http/zipball/1dfcd50112eb8f0215d0048c7c48898c1b1ae3ea",
-                "reference": "1dfcd50112eb8f0215d0048c7c48898c1b1ae3ea",
+                "url": "https://api.github.com/repos/kodephp/http/zipball/3cc59dc2b2f2df2c982f6e59605251ce46f1fe5a",
+                "reference": "3cc59dc2b2f2df2c982f6e59605251ce46f1fe5a",
                 "shasum": ""
             },
             "require": {
@@ -1132,7 +1132,7 @@
                 "issues": "https://github.com/kodephp/http/issues",
                 "source": "https://github.com/kodephp/http"
             },
-            "time": "2026-10-14T16:03:25+00:00"
+            "time": "2026-10-15T04:08:33+00:00"
         },
         {
             "name": "kode/http-client",
@@ -1306,16 +1306,16 @@
         },
         {
             "name": "kode/limiting",
-            "version": "3.0.6",
+            "version": "3.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodephp/limiting.git",
-                "reference": "b15971923460e97c3473f7552d65e47769ea5b3c"
+                "reference": "8cc2fedbf34afa32ed3e4c89d9d7e4ea0617567b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodephp/limiting/zipball/b15971923460e97c3473f7552d65e47769ea5b3c",
-                "reference": "b15971923460e97c3473f7552d65e47769ea5b3c",
+                "url": "https://api.github.com/repos/kodephp/limiting/zipball/8cc2fedbf34afa32ed3e4c89d9d7e4ea0617567b",
+                "reference": "8cc2fedbf34afa32ed3e4c89d9d7e4ea0617567b",
                 "shasum": ""
             },
             "require": {
@@ -1364,7 +1364,7 @@
                 "issues": "https://github.com/kodephp/limiting/issues",
                 "source": "https://github.com/kodephp/limiting"
             },
-            "time": "2026-10-14T12:50:39+00:00"
+            "time": "2026-10-15T03:23:50+00:00"
         },
         {
             "name": "kode/messaging",
@@ -3440,16 +3440,16 @@
         },
         {
             "name": "symfony/validator",
-            "version": "v7.4.20",
+            "version": "v7.4.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/validator.git",
-                "reference": "75a30e116016554477f662e106fd8e337f0c4dac"
+                "reference": "6c9b169bf3a1e46b2f2edc1c47be36c3b879d793"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/validator/zipball/75a30e116016554477f662e106fd8e337f0c4dac",
-                "reference": "75a30e116016554477f662e106fd8e337f0c4dac",
+                "url": "https://api.github.com/repos/symfony/validator/zipball/6c9b169bf3a1e46b2f2edc1c47be36c3b879d793",
+                "reference": "6c9b169bf3a1e46b2f2edc1c47be36c3b879d793",
                 "shasum": ""
             },
             "require": {
@@ -3520,7 +3520,7 @@
             "description": "Provides tools to validate values",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/validator/tree/v7.4.20"
+                "source": "https://github.com/symfony/validator/tree/v7.4.21"
             },
             "funding": [
                 {
@@ -3540,7 +3540,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-09-29T12:35:16+00:00"
+            "time": "2026-10-13T16:17:38+00:00"
         },
         {
             "name": "workerman/coroutine",
